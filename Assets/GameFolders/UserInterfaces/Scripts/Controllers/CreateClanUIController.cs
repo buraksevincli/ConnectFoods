@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace ConnectedFoods.UserInterface
 {
-    public class ClanUIController : MonoBehaviour
+    public class CreateClanUIController : MonoBehaviour
     {
         [Header("Clan Settings")]
         [SerializeField] private Button createClanButton;
