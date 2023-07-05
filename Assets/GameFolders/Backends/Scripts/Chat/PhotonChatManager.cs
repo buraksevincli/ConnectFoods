@@ -5,13 +5,18 @@ using Photon.Chat;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace ConnectedFoods.Network
 {
     public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
+        [Header("Chat Message Settings")]
         [SerializeField] private TMP_InputField messageInput;
+        [SerializeField] private TMP_InputField privateReceiver;
         [SerializeField] private TMP_Text chatDisplay;
+        [SerializeField] private Button sendMessageButton;
         
         private ChatClient _chatClient;
 
@@ -23,6 +28,7 @@ namespace ConnectedFoods.Network
         private void OnEnable()
         {
             DataManager.Instance.EventData.OnLoginSucces += ChatConnectOnClick;
+            sendMessageButton.onClick.AddListener(SendMessageButtonOnClick);
         }
 
         private void Update()
@@ -36,6 +42,27 @@ namespace ConnectedFoods.Network
         private void OnDisable()
         {
             DataManager.Instance.EventData.OnLoginSucces -= ChatConnectOnClick;
+            sendMessageButton.onClick.RemoveListener(SendMessageButtonOnClick);
+        }
+
+        private void SendMessageButtonOnClick()
+        {
+            if (string.IsNullOrEmpty(privateReceiver.text))
+            {
+                _chatClient.PublishMessage("RegionChannel", messageInput.text);
+                messageInput.text = "";
+            }
+            else
+            {
+                if (privateReceiver.text.Length < 3)
+                {
+                    Debug.Log("DOLDUR");
+                    return;
+                }
+                
+                _chatClient.SendPrivateMessage(privateReceiver.text, messageInput.text);
+                messageInput.text = "";
+            }
         }
 
         #region Setup
@@ -55,42 +82,12 @@ namespace ConnectedFoods.Network
 
         #region PublicChat
 
-        public void SubmitPublicChatOnClick()
-        {
-            if (_privateReceiver == "" && messageInput.text != "")
-            {
-                _chatClient.PublishMessage("RegionChannel", _currentChat);
-                messageInput.text = "";
-                _currentChat = "";
-            }
-        }
-
         public void TypeChatOnValueChange(string valueIn)
         {
             _currentChat = valueIn;
         }
 
         #endregion
-
-        #region PrivateChat
-
-        public void SubmitPrivateChatOnClick()
-        {
-            if (_privateReceiver != "" && messageInput.text != "")
-            {
-                _chatClient.SendPrivateMessage(_privateReceiver, _currentChat);
-                messageInput.text = "";
-                _currentChat = "";
-            }
-        }
-
-        public void ReceiverOnValueChange(string valueIn)
-        {
-            _privateReceiver = valueIn;
-        }
-
-        #endregion
-        
 
         public void DebugReturn(DebugLevel level, string message)
         {

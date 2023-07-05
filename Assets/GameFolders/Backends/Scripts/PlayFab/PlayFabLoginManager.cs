@@ -17,6 +17,12 @@ namespace ConnectedFoods.Network
             set => PlayerPrefs.SetString(GameConst.PLAYER_USERNAME, value);
         }
 
+        public string EntityId
+        {
+            get => PlayerPrefs.GetString(GameConst.ENTITY_ID);
+            set => PlayerPrefs.SetString(GameConst.ENTITY_ID, value);
+        }
+
         private void Start()
         {
             if (string.IsNullOrEmpty(UsernamePlayerPrefs))
@@ -43,6 +49,7 @@ namespace ConnectedFoods.Network
                 result =>
                 {
                     DataManager.Instance.EventData.OnLoginSucces?.Invoke();
+                    EntityId = result.EntityToken.Entity.Id;
                 },
                 error => { }
             );

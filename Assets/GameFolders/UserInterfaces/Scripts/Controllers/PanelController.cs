@@ -8,7 +8,6 @@ namespace ConnectedFoods.UserInterface
 {
     public class PanelController : MonoBehaviour
     {
-        [FormerlySerializedAs("chatManager")]
         [Header("Chat Settings")]
         [SerializeField] private GameObject chatRoom;
         [SerializeField] private Button chatButton;
