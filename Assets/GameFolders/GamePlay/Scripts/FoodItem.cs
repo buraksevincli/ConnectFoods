@@ -15,6 +15,7 @@ namespace ConnectedFoods.Game
         [SerializeField] private GameObject visualObject;
 
         private Transform _transform;
+        private Vector3 _startPosition;
         private bool _isSelected;
 
         public FoodType FoodType
@@ -28,7 +29,7 @@ namespace ConnectedFoods.Game
         }
 
         public GridNode GridNode { get; set; }
-
+        
         public bool IsUsing { get; set; }
 
         private void Awake()
@@ -54,13 +55,15 @@ namespace ConnectedFoods.Game
             visualObject.SetActive(true);
             Vector3 localPosition = _transform.localPosition;
             _transform.localPosition = new Vector3(GridNode.Position.x, localPosition.y, localPosition.z);
-            transform.DOLocalMoveY(GridNode.Position.y, 1f);
+            transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
         }
 
         public void OnMatch()
         {
             transform.localScale = Vector3.one;
+            transform.localPosition = _startPosition;
             IsUsing = false;
+            _isSelected = false;
             visualObject.SetActive(false);
             GridNode.IsEmpty = true;
             GridNode.FoodItem = null;
@@ -93,6 +96,11 @@ namespace ConnectedFoods.Game
         {
             _isSelected = false;
             transform.localScale = Vector3.one;
+        }
+
+        public void SetStartPosition(Vector3 startPosition)
+        {
+            _startPosition = startPosition;
         }
     }
 }

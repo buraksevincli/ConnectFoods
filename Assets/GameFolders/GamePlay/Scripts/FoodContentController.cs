@@ -44,6 +44,7 @@ namespace ConnectedFoods.Game
             foreach (FoodItem foodItem in _foodItems)
             {
                 foodItem.transform.position = startPoint.position;
+                foodItem.SetStartPosition(startPoint.position);
             }
             
             for (int i = 0; i < size; i++)
@@ -53,7 +54,7 @@ namespace ConnectedFoods.Game
                     float x = j - size / 2f + 0.5f;
                     float y = i - size / 2f + 0.5f;
                     
-                    _gridNodes[i, j] = new GridNode
+                    _gridNodes[j, i] = new GridNode
                     {
                         Position = new Vector3(x, y, 0),
                         FoodItem = null,
@@ -76,36 +77,41 @@ namespace ConnectedFoods.Game
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (_gridNodes[i,j].IsEmpty)
+                    if (_gridNodes[j,i].IsEmpty)
                     {
-                        bool foundedFood = false;
+                         bool foundedFood = false;
                         
-                        for (int k = j; k < size; k++)
+                        for (int k = i; k < size; k++)
                         {
-                            if (_gridNodes[i,k].IsEmpty) continue;
-
+                            if (_gridNodes[j,k].IsEmpty) continue;
+                        
                             foundedFood = true;
                             
-                            FoodItem foodItem = _gridNodes[i,k].FoodItem;
+                            FoodItem foodItem = _gridNodes[j,k].FoodItem;
+                        
+                            _gridNodes[j, i].IsEmpty = false;
+                            _gridNodes[j, i].FoodItem = foodItem;
+                            _gridNodes[j,k].IsEmpty = true;
 
-                            _gridNodes[i,k].IsEmpty = false;
-                            foodItem.GridNode = _gridNodes[i, k];
+                            foodItem.GridNode = _gridNodes[j, i];
                             foodItem.MoveToGrid();
+                            break;
                         }
                         
                         if (!foundedFood)
                         {
                             FoodItem foodItem = _foodItems.FirstOrDefault(foodItem => !foodItem.IsUsing);
+                            foodItem.FoodType = (FoodType)Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
                             foodItem.IsUsing = true;
-                            _gridNodes[i,j].IsEmpty = false;
-                            _gridNodes[i,j].FoodItem = foodItem;
-                            foodItem.GridNode = _gridNodes[i, j];
+                            _gridNodes[j,i].IsEmpty = false;
+                            _gridNodes[j,i].FoodItem = foodItem;
+                            foodItem.GridNode = _gridNodes[j, i];
                             foodItem.MoveToGrid();
                         }
                     }
-                    yield return new WaitForSeconds(0.05f);
+                    yield return new WaitForSeconds(0.01f);
                 }
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 

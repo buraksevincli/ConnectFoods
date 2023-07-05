@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: FoodData
   m_EditorClassIdentifier: 
   foods:
-  - foodType: 0
-    sprite: {fileID: 272456679, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
   - foodType: 1
-    sprite: {fileID: 167634470, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
+    sprite: {fileID: 272456679, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
   - foodType: 2
-    sprite: {fileID: 2031836237, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
+    sprite: {fileID: 167634470, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
   - foodType: 3
-    sprite: {fileID: -443461809, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
+    sprite: {fileID: 2031836237, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
   - foodType: 4
+    sprite: {fileID: -443461809, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
+  - foodType: 5
     sprite: {fileID: 1085713664, guid: d6e59a1731645c0428db26ed2aed3245, type: 3}
