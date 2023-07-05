@@ -1,4 +1,5 @@
 using System;
+using ConnectedFoods.Game;
 using PlayFab.GroupsModels;
 using UnityEngine;
 
@@ -11,5 +12,8 @@ namespace ConnectedFoods.Core
         public Action OnLoginSucces { get; set; }
         
         public Action<string , EntityKey> OnCreateClanObject { get; set; }
+        
+        public Action<FoodItem> OnSelectFoodItem { get; set; }
+        public Action OnMatch { get; set; }
     }
 }
