@@ -1,21 +1,17 @@
+using System;
+using ConnectedFoods.Core;
 using ExitGames.Client.Photon;
 using Photon.Chat;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
 
-namespace ConnectedFoods.Backend
+namespace ConnectedFoods.Network
 {
     public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
-        [SerializeField] private string username;
-
         [SerializeField] private TMP_InputField messageInput;
-
         [SerializeField] private TMP_Text chatDisplay;
-
-        [SerializeField] private GameObject joinPanel;
-        [SerializeField] private GameObject chatPanel;
         
         private ChatClient _chatClient;
 
@@ -23,6 +19,11 @@ namespace ConnectedFoods.Backend
         private string _privateReceiver = "";
         
         private bool _isConnected;
+
+        private void OnEnable()
+        {
+            DataManager.Instance.EventData.OnLoginSucces += ChatConnectOnClick;
+        }
 
         private void Update()
         {
@@ -32,12 +33,12 @@ namespace ConnectedFoods.Backend
             }
         }
 
-        #region Setup
-
-        public void UsernameOnValueChange(string valueIn)
+        private void OnDisable()
         {
-            username = valueIn;
+            DataManager.Instance.EventData.OnLoginSucces -= ChatConnectOnClick;
         }
+
+        #region Setup
 
         public void ChatConnectOnClick()
         {
@@ -46,7 +47,7 @@ namespace ConnectedFoods.Backend
             _chatClient = new ChatClient(this);
             
             _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
-                new AuthenticationValues(username));
+                new AuthenticationValues(PlayFabLoginManager.Instance.UsernamePlayerPrefs));
             
         }
 
@@ -102,12 +103,12 @@ namespace ConnectedFoods.Backend
 
         public void OnConnected()
         {
-            joinPanel.SetActive(false);
             _chatClient.Subscribe(new string[] { "RegionChannel" });
         }
 
         public void OnChatStateChange(ChatState state)
         {
+            
         }
 
         public void OnGetMessages(string channelName, string[] senders, object[] messages)
@@ -132,7 +133,7 @@ namespace ConnectedFoods.Backend
 
         public void OnSubscribed(string[] channels, bool[] results)
         {
-            chatPanel.SetActive(true);
+            
         }
 
         public void OnUnsubscribed(string[] channels)
