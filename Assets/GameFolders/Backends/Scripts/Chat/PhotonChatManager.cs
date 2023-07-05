@@ -1,12 +1,10 @@
-using System;
 using ExitGames.Client.Photon;
 using Photon.Chat;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace GameFolders.Photon.Scripts.Chat
+namespace ConnectedFoods.Backend
 {
     public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
@@ -31,12 +29,6 @@ namespace GameFolders.Photon.Scripts.Chat
             if (_isConnected)
             {
                 _chatClient.Service();
-            }
-            
-            if (messageInput.text != "" && Input.GetKey(KeyCode.Return))
-            {
-                SubmitPublicChatOnClick();
-                SubmitPrivateChatOnClick();
             }
         }
 
@@ -64,7 +56,7 @@ namespace GameFolders.Photon.Scripts.Chat
 
         public void SubmitPublicChatOnClick()
         {
-            if (_privateReceiver == "")
+            if (_privateReceiver == "" && messageInput.text != "")
             {
                 _chatClient.PublishMessage("RegionChannel", _currentChat);
                 messageInput.text = "";
@@ -83,7 +75,7 @@ namespace GameFolders.Photon.Scripts.Chat
 
         public void SubmitPrivateChatOnClick()
         {
-            if (_privateReceiver != "")
+            if (_privateReceiver != "" && messageInput.text != "")
             {
                 _chatClient.SendPrivateMessage(_privateReceiver, _currentChat);
                 messageInput.text = "";
