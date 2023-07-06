@@ -1,9 +1,7 @@
-using System;
 using ConnectedFoods.Core;
 using ConnectedFoods.Data;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace ConnectedFoods.Game
 {
@@ -13,10 +11,11 @@ namespace ConnectedFoods.Game
         [SerializeField] private FoodData foodData;
         [SerializeField] private SpriteRenderer foodSpriteRenderer;
         [SerializeField] private GameObject visualObject;
-
+        
         private Transform _transform;
         private Vector3 _startPosition;
-        private bool _isSelected;
+
+        public bool _isSelected;
 
         public FoodType FoodType
         {
@@ -55,36 +54,31 @@ namespace ConnectedFoods.Game
             visualObject.SetActive(true);
             Vector3 localPosition = _transform.localPosition;
             _transform.localPosition = new Vector3(GridNode.Position.x, localPosition.y, localPosition.z);
-            transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
+            _transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
         }
 
         public void OnMatch()
         {
-            transform.localScale = Vector3.one;
-            transform.localPosition = _startPosition;
+            _transform.localScale = Vector3.one;
+            _transform.localPosition = _startPosition;
             IsUsing = false;
             _isSelected = false;
-            visualObject.SetActive(false);
             GridNode.IsEmpty = true;
             GridNode.FoodItem = null;
+            visualObject.SetActive(false);
         }
         
         private void OnMouseEnter()
         {
-            if (!MatchController.Instance.IsChoosing || _isSelected) return;
-
-            _isSelected = true;
+            if (MatchController.Instance.CurrentFoodType != this.FoodType || _isSelected) return;
 
             DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(this);
-            transform.localScale = Vector3.one * 0.8f;
         }
 
         private void OnMouseDown()
         {
             _isSelected = true;
-            MatchController.Instance.IsChoosing = true;
             DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(this);
-            transform.localScale = Vector3.one * 0.8f;
         }
 
         private void OnMouseUp()
@@ -95,7 +89,7 @@ namespace ConnectedFoods.Game
         public void SelectionReset()
         {
             _isSelected = false;
-            transform.localScale = Vector3.one;
+            _transform.localScale = Vector3.one;
         }
 
         public void SetStartPosition(Vector3 startPosition)

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ConnectedFoods.Core;
-using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
@@ -92,7 +91,7 @@ namespace ConnectedFoods.Game
                             _gridNodes[j, i].IsEmpty = false;
                             _gridNodes[j, i].FoodItem = foodItem;
                             _gridNodes[j,k].IsEmpty = true;
-
+                        
                             foodItem.GridNode = _gridNodes[j, i];
                             foodItem.MoveToGrid();
                             break;
@@ -111,7 +110,7 @@ namespace ConnectedFoods.Game
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
 
