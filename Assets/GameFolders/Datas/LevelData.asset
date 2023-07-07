@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   levelRemainingMove: 0f000000
-  levelRequiredApple: 0a000000
-  levelRequiredBanana: 0a000000
-  levelRequiredBlob: 0a000000
-  levelRequiredBlueberries: 0a000000
-  levelRequiredDragonFruit: 0a000000
+  levelRequiredApple: 03000000
+  levelRequiredBanana: 03000000
+  levelRequiredBlob: 03000000
+  levelRequiredBlueberries: 03000000
+  levelRequiredDragonFruit: 03000000
+  levelHighScore: 

@@ -12,6 +12,7 @@ namespace ConnectedFoods.Data
         [SerializeField] private int[] levelRequiredBlob;
         [SerializeField] private int[] levelRequiredBlueberries;
         [SerializeField] private int[] levelRequiredDragonFruit;
+        [SerializeField] private int[] levelHighScore;
 
         public int[] LevelRemainingMove => levelRemainingMove;
         public int[] LevelRequiredApple => levelRequiredApple;
@@ -19,6 +20,8 @@ namespace ConnectedFoods.Data
         public int[] LevelRequiredBlob => levelRequiredBlob;
         public int[] LevelRequiredBlueberries => levelRequiredBlueberries;
         public int[] LevelRequiredDragonFruit => levelRequiredDragonFruit;
+
+        public int[] LevelHighScore => levelHighScore;
 
     }
 }

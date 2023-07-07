@@ -31,8 +31,11 @@ namespace ConnectedFoods.UserInterface
 
         private void RemainingCountHandler()
         {
+            if (_remainingCount < 0) return;
+            
             _remainingCount -= 1;
             remainingMoveCount.text = _remainingCount.ToString();
+            DataManager.Instance.EventData.OnCheckRemainingMove?.Invoke(_remainingCount);
         }
     }
 }

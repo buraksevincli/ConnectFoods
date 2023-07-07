@@ -1,4 +1,3 @@
-using System;
 using ConnectedFoods.Core;
 using ConnectedFoods.Game;
 using TMPro;
@@ -23,6 +22,11 @@ namespace ConnectedFoods.UserInterface
         [SerializeField] private GameObject dragonFruit;
         [SerializeField] private TMP_Text dragonFruitGoal;
 
+        private int _foodScore;
+        private int _totalScore;
+        private int _remainingMove;
+        private int _totalFoodCount;
+        
         private int _level;
         private int _appleGoalCount;
         private int _bananaGoalCount;
@@ -34,6 +38,7 @@ namespace ConnectedFoods.UserInterface
         {
             _level = GameManager.Instance.Level - 1;
 
+            _remainingMove = DataManager.Instance.LevelData.LevelRemainingMove[_level];
             _appleGoalCount = DataManager.Instance.LevelData.LevelRequiredApple[_level];
             _bananaGoalCount = DataManager.Instance.LevelData.LevelRequiredBanana[_level];
             _blopGoalCount = DataManager.Instance.LevelData.LevelRequiredBlob[_level];
@@ -46,11 +51,35 @@ namespace ConnectedFoods.UserInterface
         private void OnEnable()
         {
             DataManager.Instance.EventData.OnMatch += GoalUpdateHandler;
+            DataManager.Instance.EventData.OnCheckRemainingMove += RemainingMoveHandler;
         }
 
         private void OnDisable()
         {
             DataManager.Instance.EventData.OnMatch -= GoalUpdateHandler;
+            DataManager.Instance.EventData.OnCheckRemainingMove -= RemainingMoveHandler;
+        }
+
+        private void Update()
+        {
+            _totalFoodCount = _appleGoalCount + _bananaGoalCount + _blopGoalCount + _blueberriesGoalCount +
+                              _dragonFruitGoalCount;
+
+            if (_totalFoodCount == 0 && _remainingMove >= 0)
+            {
+                _totalScore = _foodScore + _remainingMove;
+                DataManager.Instance.EventData.OnWinCondition?.Invoke(_totalScore);
+            }
+            else if(_totalFoodCount > 0 && _remainingMove == 0)
+            {
+                DataManager.Instance.EventData.OnLoseCondition?.Invoke(_foodScore);
+            }
+            
+        }
+
+        private void RemainingMoveHandler(int score)
+        {
+            _remainingMove = score;
         }
 
         private void GoalSetter(int level)
@@ -114,6 +143,7 @@ namespace ConnectedFoods.UserInterface
                     if (_appleGoalCount > 0)
                     {
                         _appleGoalCount -= MatchController.Instance.ListCount;
+                        _foodScore += MatchController.Instance.ListCount;
                     }
                     if (_appleGoalCount < 0)
                     {
@@ -126,6 +156,7 @@ namespace ConnectedFoods.UserInterface
                     if (_bananaGoalCount > 0)
                     {
                         _bananaGoalCount -= MatchController.Instance.ListCount;
+                        _foodScore += MatchController.Instance.ListCount;
                     }
 
                     if (_bananaGoalCount < 0)
@@ -139,6 +170,7 @@ namespace ConnectedFoods.UserInterface
                     if (_blopGoalCount > 0)
                     {
                         _blopGoalCount -= MatchController.Instance.ListCount;
+                        _foodScore += MatchController.Instance.ListCount;
                     }
 
                     if (_blopGoalCount < 0)
@@ -152,6 +184,7 @@ namespace ConnectedFoods.UserInterface
                     if (_blueberriesGoalCount > 0)
                     {
                         _blueberriesGoalCount -= MatchController.Instance.ListCount;
+                        _foodScore += MatchController.Instance.ListCount;
                     }
 
                     if (_blueberriesGoalCount < 0)
@@ -165,6 +198,7 @@ namespace ConnectedFoods.UserInterface
                     if (_dragonFruitGoalCount > 0)
                     {
                         _dragonFruitGoalCount -= MatchController.Instance.ListCount;
+                        _foodScore += MatchController.Instance.ListCount;
                     }
 
                     if (_dragonFruitGoalCount < 0)

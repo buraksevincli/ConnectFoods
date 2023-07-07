@@ -15,5 +15,9 @@ namespace ConnectedFoods.Core
         
         public Action<FoodItem> OnSelectFoodItem { get; set; }
         public Action OnMatch { get; set; }
+        
+        public Action<int> OnCheckRemainingMove { get; set; }
+        public Action<int> OnWinCondition { get; set; }
+        public Action<int> OnLoseCondition { get; set; }
     }
 }
