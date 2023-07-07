@@ -21,7 +21,7 @@ namespace ConnectedFoods.Network
         private ChatClient _chatClient;
 
         private string _currentChat;
-        private string _privateReceiver = "";
+        //private string _privateReceiver = "";
         
         private bool _isConnected;
 

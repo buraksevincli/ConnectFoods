@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ConnectedFoods.Core;
 using UnityEngine;
@@ -11,10 +12,18 @@ namespace ConnectedFoods.Game
         private List<FoodItem> _selectedItems = new List<FoodItem>();
 
         public FoodType CurrentFoodType;
-        
+
         private LineRenderer _lineRenderer;
         private Camera _camera;
         private Vector3 _mousePosition;
+
+        //RaySphere Settings
+        [SerializeField] private float distance = 1.5f;
+        [SerializeField] private float radius = .4f;
+        private Vector2 origin;
+        private Vector2 direction;
+        private Vector2 circleCenter;
+        private Collider2D _collider;
 
         protected override void Awake()
         {
@@ -29,8 +38,8 @@ namespace ConnectedFoods.Game
             {
                 LineRendererController();
 
-                //RayController();
-                
+                RayController();
+
                 if (_selectedItems.Count > 1)
                 {
                     float mouseToLast = Vector3.Distance(_selectedItems[^1].transform.position, _mousePosition);
@@ -68,7 +77,7 @@ namespace ConnectedFoods.Game
             {
                 float distance = Vector3.Distance(_selectedItems[^1].transform.position,
                     foodItem.transform.position);
-                
+
                 if (CurrentFoodType == foodItem.FoodType && distance < 1.5f) // Matching is proceeding successfully
                 {
                     foodItem._isSelected = true;
@@ -89,11 +98,11 @@ namespace ConnectedFoods.Game
             }
             else
             {
-                
                 foreach (FoodItem selectedItem in _selectedItems)
                 {
                     selectedItem.OnMatch();
                 }
+
                 DataManager.Instance.EventData.OnMatch?.Invoke();
             }
 
@@ -107,31 +116,61 @@ namespace ConnectedFoods.Game
             _lineRenderer.enabled = true;
             _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _lineRenderer.positionCount = _selectedItems.Count + 2;
-                
+
             _lineRenderer.SetPosition(0, _selectedItems[0].transform.position);
-                
+
             for (int i = 0; i < _selectedItems.Count; i++)
             {
                 _lineRenderer.SetPosition(i + 1, _selectedItems[i].transform.position);
             }
-            
+
             _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _mousePosition);
 
             _lineRenderer.startWidth = .2f;
             _lineRenderer.endWidth = .2f;
         }
 
-        // private void RayController()
-        // {
-        //     Vector2 origin = _selectedItems[^1].transform.position;
-        //     Vector2 direction = _selectedItems[^1].transform.position - _mousePosition;
-        //     float rayDistance = 0.5f;
-        //     
-        //     RaycastHit2D hit = Physics2D.Raycast(origin, -direction, rayDistance);
+        private void RayController()
+        {
+            origin = _selectedItems[^1].transform.position;
+            direction = (_selectedItems[^1].transform.position - _mousePosition).normalized;
+            circleCenter = origin + direction * -distance;
+
+            _collider = Physics2D.OverlapCircle(circleCenter, radius);
+
+            if (_collider)
+            {
+                _collider.TryGetComponent(out FoodItem foodItem);
+                if (CurrentFoodType != foodItem.FoodType || foodItem._isSelected) return;
+                
+                DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(foodItem);
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            OnDrawGizmosSelected();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(circleCenter, radius);
+        }
+
+        // private int maxLevel;
         //
-        //     Debug.DrawRay(origin, -direction * rayDistance, Color.black);
+        // public int Level
+        // {
         //     
-        //     Debug.Log(hit.collider.GetComponent<FoodItem>().FoodType);
+        //     get => PlayerPrefs.GetInt("Level", 1);
+        //     set
+        //     {
+        //         if (value <= maxLevel)
+        //         {
+        //             PlayerPrefs.SetInt("Level", value);
+        //         }
+        //     }
         // }
     }
 }
