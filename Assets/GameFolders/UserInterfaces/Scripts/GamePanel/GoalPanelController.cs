@@ -45,7 +45,7 @@ namespace ConnectedFoods.UserInterface
             _blueberriesGoalCount = DataManager.Instance.LevelData.LevelRequiredBlueberries[_level];
             _dragonFruitGoalCount = DataManager.Instance.LevelData.LevelRequiredDragonFruit[_level];
 
-            GoalSetter(_level);
+            GoalSetter();
         }
 
         private void OnEnable()
@@ -82,7 +82,7 @@ namespace ConnectedFoods.UserInterface
             _remainingMove = score;
         }
 
-        private void GoalSetter(int level)
+        private void GoalSetter()
         {
             if (_appleGoalCount != 0)
             {

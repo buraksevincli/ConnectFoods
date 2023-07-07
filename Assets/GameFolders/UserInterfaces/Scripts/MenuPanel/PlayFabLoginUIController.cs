@@ -1,5 +1,5 @@
 using System;
-using ConnectedFoods.Cores;
+using ConnectedFoods.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

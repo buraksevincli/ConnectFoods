@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e299ca6e63b6a744fb09040718dec211, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  levelRemainingMove: 03000000
-  levelRequiredApple: 03000000
-  levelRequiredBanana: 03000000
-  levelRequiredBlob: 03000000
-  levelRequiredBlueberries: 03000000
-  levelRequiredDragonFruit: 03000000
+  levelRemainingMove: 0f00000005000000
+  levelRequiredApple: 0500000005000000
+  levelRequiredBanana: 0000000005000000
+  levelRequiredBlob: 0300000005000000
+  levelRequiredBlueberries: 0400000005000000
+  levelRequiredDragonFruit: 0000000005000000
   levelHighScore: 

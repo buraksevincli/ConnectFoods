@@ -28,7 +28,7 @@ namespace ConnectedFoods.UserInterface
         {
             _score = score;
             resultPanel.SetActive(true);
-            resultText.text = "Tebrikler !";
+            resultText.text = "TEBRIKLER !";
             scoreCountText.text = _score.ToString();
         }
 
@@ -36,7 +36,7 @@ namespace ConnectedFoods.UserInterface
         {
             _score = score;
             resultPanel.SetActive(true);
-            resultText.text = "Başaramadık..";
+            resultText.text = "BASARAMADIK..";
             scoreCountText.text = _score.ToString();
         }
 

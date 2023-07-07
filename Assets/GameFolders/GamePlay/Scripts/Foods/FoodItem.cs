@@ -38,7 +38,7 @@ namespace ConnectedFoods.Game
 
         private void Start()
         {
-            //visualObject.SetActive(false);
+            visualObject.SetActive(false);
         }
 
         private void OnValidate()

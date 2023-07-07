@@ -42,6 +42,7 @@ namespace ConnectedFoods.Game
             
             foreach (FoodItem foodItem in _foodItems)
             {
+                foodItem.transform.position = startPoint.position;
                 foodItem.SetStartPosition(startPoint.position);
             }
             
@@ -109,6 +110,7 @@ namespace ConnectedFoods.Game
                             foodItem.GridNode = _gridNodes[j, i];
                             foodItem.MoveToGrid();
                             foundedEmptyGrid = true;
+                            yield return new WaitForSeconds(.01f);
                         }
                     }
 

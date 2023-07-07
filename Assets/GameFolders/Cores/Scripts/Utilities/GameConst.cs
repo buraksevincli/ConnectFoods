@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace ConnectedFoods.Cores
+namespace ConnectedFoods.Core
 {
     public class GameConst : MonoBehaviour
     {
