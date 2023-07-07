@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9b89ae-2989-4f32-bd3d-a29a4f47231f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scriptables/EventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scriptables/EventData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/LineController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/LineController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/MatchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/MatchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/OverlapCircleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/OverlapCircleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/LevelEditor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/LevelEditor.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/GoalPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/GoalPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/MovePanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/MovePanelController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +124,7 @@
       <updated>1688558760852</updated>
       <workItem from="1688558765862" duration="60000" />
       <workItem from="1688688035519" duration="3644000" />
-      <workItem from="1688730286733" duration="15555000" />
+      <workItem from="1688730286733" duration="19611000" />
     </task>
     <servers />
   </component>

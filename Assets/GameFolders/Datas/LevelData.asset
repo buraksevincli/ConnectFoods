@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e299ca6e63b6a744fb09040718dec211, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  levelRemainingMove: 0f000000
+  levelRemainingMove: 03000000
   levelRequiredApple: 03000000
   levelRequiredBanana: 03000000
   levelRequiredBlob: 03000000

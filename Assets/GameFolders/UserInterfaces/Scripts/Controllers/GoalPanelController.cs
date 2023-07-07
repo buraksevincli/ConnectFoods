@@ -137,13 +137,13 @@ namespace ConnectedFoods.UserInterface
 
         private void GoalUpdateHandler()
         {
-            switch (MatchController.Instance.CurrentFoodType)
+            switch (MatchController.Instance.currentFoodType)
             {
                 case FoodType.Apple:
                     if (_appleGoalCount > 0)
                     {
-                        _appleGoalCount -= MatchController.Instance.ListCount;
-                        _foodScore += MatchController.Instance.ListCount;
+                        _appleGoalCount -= MatchController.Instance.listCount;
+                        _foodScore += MatchController.Instance.listCount;
                     }
                     if (_appleGoalCount < 0)
                     {
@@ -155,8 +155,8 @@ namespace ConnectedFoods.UserInterface
                 case  FoodType.Banana:
                     if (_bananaGoalCount > 0)
                     {
-                        _bananaGoalCount -= MatchController.Instance.ListCount;
-                        _foodScore += MatchController.Instance.ListCount;
+                        _bananaGoalCount -= MatchController.Instance.listCount;
+                        _foodScore += MatchController.Instance.listCount;
                     }
 
                     if (_bananaGoalCount < 0)
@@ -169,8 +169,8 @@ namespace ConnectedFoods.UserInterface
                 case FoodType.Blob:
                     if (_blopGoalCount > 0)
                     {
-                        _blopGoalCount -= MatchController.Instance.ListCount;
-                        _foodScore += MatchController.Instance.ListCount;
+                        _blopGoalCount -= MatchController.Instance.listCount;
+                        _foodScore += MatchController.Instance.listCount;
                     }
 
                     if (_blopGoalCount < 0)
@@ -183,8 +183,8 @@ namespace ConnectedFoods.UserInterface
                 case FoodType.Blueberries:
                     if (_blueberriesGoalCount > 0)
                     {
-                        _blueberriesGoalCount -= MatchController.Instance.ListCount;
-                        _foodScore += MatchController.Instance.ListCount;
+                        _blueberriesGoalCount -= MatchController.Instance.listCount;
+                        _foodScore += MatchController.Instance.listCount;
                     }
 
                     if (_blueberriesGoalCount < 0)
@@ -197,8 +197,8 @@ namespace ConnectedFoods.UserInterface
                 case FoodType.DragonFruit:
                     if (_dragonFruitGoalCount > 0)
                     {
-                        _dragonFruitGoalCount -= MatchController.Instance.ListCount;
-                        _foodScore += MatchController.Instance.ListCount;
+                        _dragonFruitGoalCount -= MatchController.Instance.listCount;
+                        _foodScore += MatchController.Instance.listCount;
                     }
 
                     if (_dragonFruitGoalCount < 0)

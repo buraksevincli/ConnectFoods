@@ -8,9 +8,11 @@ namespace ConnectedFoods.Game
     public class MatchController : MonoSingleton<MatchController>
     {
         [SerializeField] private int minMatchCount;
+        [SerializeField] private float maxDistance;
+        [SerializeField] private float radius;
 
-        [NonSerialized] public FoodType CurrentFoodType;
-        [NonSerialized] public int ListCount;
+        [NonSerialized] public FoodType currentFoodType;
+        [NonSerialized] public int listCount;
 
         private List<FoodItem> _selectedItems = new List<FoodItem>();
 
@@ -34,9 +36,17 @@ namespace ConnectedFoods.Game
             if (Input.GetMouseButton(0))
             {
                 _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+                _mousePosition = new Vector3(_mousePosition.x, _mousePosition.y, 0);
+                
+                if (Vector3.Distance(_selectedItems[^1].transform.position,_mousePosition) > maxDistance)
+                {
+                    Vector3 direction = _mousePosition - _selectedItems[^1].transform.position;
+                    direction.Normalize();
 
-                _lineController.LineRenderer(_selectedItems, _mousePosition, _camera);
-                _overlapCircleController.OverlapCircle(_selectedItems, _mousePosition, _camera);
+                    _mousePosition = _selectedItems[^1].transform.position + direction * maxDistance;
+                }
+                _lineController.LineRenderer(_selectedItems, _mousePosition);
+                _overlapCircleController.OverlapCircle(_mousePosition,radius);
                 
                 if (_selectedItems.Count > 1)
                 {
@@ -67,7 +77,7 @@ namespace ConnectedFoods.Game
         {
             if (_selectedItems.Count == 0)
             {
-                CurrentFoodType = foodItem.FoodType;
+                currentFoodType = foodItem.FoodType;
                 _selectedItems.Add(foodItem);
                 foodItem.transform.localScale = Vector3.one * 0.8f;
             }
@@ -76,7 +86,7 @@ namespace ConnectedFoods.Game
                 float distance = Vector3.Distance(_selectedItems[^1].transform.position,
                     foodItem.transform.position);
 
-                if (CurrentFoodType == foodItem.FoodType && distance < 1.5f) // Matching is proceeding successfully
+                if (currentFoodType == foodItem.FoodType && distance < 1.5f) // Matching is proceeding successfully
                 {
                     foodItem._isSelected = true;
                     _selectedItems.Add(foodItem);
@@ -101,24 +111,24 @@ namespace ConnectedFoods.Game
                     selectedItem.OnMatch();
                 }
 
-                ListCount = _selectedItems.Count;
+                listCount = _selectedItems.Count;
                 DataManager.Instance.EventData.OnMatch?.Invoke();
             }
 
-            CurrentFoodType = FoodType.None;
+            currentFoodType = FoodType.None;
             _selectedItems.Clear();
             _lineController.LineDisable();
         }
         
-        // private void OnDrawGizmos()
-        // {
-        //     OnDrawGizmosSelected();
-        // }
-        //
-        // private void OnDrawGizmosSelected()
-        // {
-        //     _overlapCircleController.OnDrawGizmosSelected();
-        // }
+        private void OnDrawGizmos()
+        {
+            OnDrawGizmosSelected();
+        }
+        
+        private void OnDrawGizmosSelected()
+        {
+            _overlapCircleController.OnDrawGizmosSelected();
+        }
 
 
         // private int maxLevel;

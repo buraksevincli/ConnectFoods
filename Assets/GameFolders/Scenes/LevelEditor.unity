@@ -4039,6 +4039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   minMatchCount: 3
+  maxDistance: 1
+  radius: 0.4
 --- !u!4 &1513725769
 Transform:
   m_ObjectHideFlags: 0

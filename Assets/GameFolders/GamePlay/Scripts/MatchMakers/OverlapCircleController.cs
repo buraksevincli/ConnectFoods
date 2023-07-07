@@ -6,28 +6,23 @@ namespace ConnectedFoods.Game
 {
     public class OverlapCircleController
     {
-        private Vector2 origin;
-        private Vector2 direction;
         private Vector2 circleCenter;
         private Collider2D _collider;
         
-        private float distance = 3f;
-        private float radius = .3f;
-        
+        private float _radius = .3f;
 
-        public void OverlapCircle(List<FoodItem> selectedItems, Vector3 mousePosition, Camera camera)
+
+        public void OverlapCircle(Vector3 center, float radius)
         {
-            mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
-            origin = selectedItems[^1].transform.position;
-            direction = (selectedItems[^1].transform.position - mousePosition).normalized;
-            circleCenter = origin + direction * -distance;
+            _radius = radius;
+            circleCenter = center;
 
             _collider = Physics2D.OverlapCircle(circleCenter, radius);
 
             if (_collider)
             {
                 _collider.TryGetComponent(out FoodItem foodItem);
-                if (MatchController.Instance.CurrentFoodType != foodItem.FoodType || foodItem._isSelected) return;
+                if (MatchController.Instance.currentFoodType != foodItem.FoodType || foodItem._isSelected) return;
                 
                 DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(foodItem);
             }
@@ -36,7 +31,7 @@ namespace ConnectedFoods.Game
         public void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(circleCenter, radius);
+            Gizmos.DrawWireSphere(circleCenter, _radius);
         }
     }
 }
