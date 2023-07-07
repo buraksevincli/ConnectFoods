@@ -14,7 +14,7 @@ namespace ConnectedFoods.Game
         [NonSerialized] public FoodType currentFoodType;
         [NonSerialized] public int listCount;
 
-        private List<FoodItem> _selectedItems = new List<FoodItem>();
+        private readonly List<FoodItem> _selectedItems = new List<FoodItem>();
 
         private LineController _lineController;
         private OverlapCircleController _overlapCircleController;
@@ -37,6 +37,8 @@ namespace ConnectedFoods.Game
             {
                 _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
                 _mousePosition = new Vector3(_mousePosition.x, _mousePosition.y, 0);
+
+                if (_selectedItems.Count == 0) return;
                 
                 if (Vector3.Distance(_selectedItems[^1].transform.position,_mousePosition) > maxDistance)
                 {
@@ -127,7 +129,7 @@ namespace ConnectedFoods.Game
         
         private void OnDrawGizmosSelected()
         {
-            _overlapCircleController.OnDrawGizmosSelected();
+            _overlapCircleController?.OnDrawGizmosSelected();
         }
 
 

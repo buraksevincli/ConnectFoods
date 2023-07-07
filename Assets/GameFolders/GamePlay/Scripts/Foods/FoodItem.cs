@@ -38,12 +38,12 @@ namespace ConnectedFoods.Game
 
         private void Start()
         {
-            visualObject.SetActive(false);
+            //visualObject.SetActive(false);
         }
 
         private void OnValidate()
         {
-            if (foodData != null && foodSpriteRenderer != null)
+            if (foodData != null && foodSpriteRenderer != null && foodType != FoodType.None)
             {
                 foodSpriteRenderer.sprite = foodData.GetFoodSprite(foodType);
             }
