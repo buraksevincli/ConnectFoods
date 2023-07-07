@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e299ca6e63b6a744fb09040718dec211, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  levelRemainingMove: 0f000000
+  levelRequiredApple: 0a000000
+  levelRequiredBanana: 0a000000
+  levelRequiredBlob: 0a000000
+  levelRequiredBlueberries: 0a000000
+  levelRequiredDragonFruit: 0a000000

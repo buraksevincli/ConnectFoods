@@ -9,37 +9,35 @@ namespace ConnectedFoods.Game
     {
         [SerializeField] private int minMatchCount;
 
+        [NonSerialized] public FoodType CurrentFoodType;
+        [NonSerialized] public int ListCount;
+
         private List<FoodItem> _selectedItems = new List<FoodItem>();
 
-        public FoodType CurrentFoodType;
+        private LineController _lineController;
+        private OverlapCircleController _overlapCircleController;
 
-        private LineRenderer _lineRenderer;
-        private Camera _camera;
         private Vector3 _mousePosition;
-
-        //RaySphere Settings
-        [SerializeField] private float distance = 1.5f;
-        [SerializeField] private float radius = .4f;
-        private Vector2 origin;
-        private Vector2 direction;
-        private Vector2 circleCenter;
-        private Collider2D _collider;
+        private Camera _camera;
 
         protected override void Awake()
         {
             base.Awake();
             _camera = Camera.main;
-            _lineRenderer = GetComponent<LineRenderer>();
+
+            _lineController = new LineController(this);
+            _overlapCircleController = new OverlapCircleController();
         }
 
         private void Update()
         {
             if (Input.GetMouseButton(0))
             {
-                LineRendererController();
+                _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-                RayController();
-
+                _lineController.LineRenderer(_selectedItems, _mousePosition, _camera);
+                _overlapCircleController.OverlapCircle(_selectedItems, _mousePosition, _camera);
+                
                 if (_selectedItems.Count > 1)
                 {
                     float mouseToLast = Vector3.Distance(_selectedItems[^1].transform.position, _mousePosition);
@@ -103,60 +101,25 @@ namespace ConnectedFoods.Game
                     selectedItem.OnMatch();
                 }
 
+                ListCount = _selectedItems.Count;
                 DataManager.Instance.EventData.OnMatch?.Invoke();
             }
 
             CurrentFoodType = FoodType.None;
             _selectedItems.Clear();
-            _lineRenderer.enabled = false;
+            _lineController.LineDisable();
         }
+        
+        // private void OnDrawGizmos()
+        // {
+        //     OnDrawGizmosSelected();
+        // }
+        //
+        // private void OnDrawGizmosSelected()
+        // {
+        //     _overlapCircleController.OnDrawGizmosSelected();
+        // }
 
-        private void LineRendererController()
-        {
-            _lineRenderer.enabled = true;
-            _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            _lineRenderer.positionCount = _selectedItems.Count + 2;
-
-            _lineRenderer.SetPosition(0, _selectedItems[0].transform.position);
-
-            for (int i = 0; i < _selectedItems.Count; i++)
-            {
-                _lineRenderer.SetPosition(i + 1, _selectedItems[i].transform.position);
-            }
-
-            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _mousePosition);
-
-            _lineRenderer.startWidth = .2f;
-            _lineRenderer.endWidth = .2f;
-        }
-
-        private void RayController()
-        {
-            origin = _selectedItems[^1].transform.position;
-            direction = (_selectedItems[^1].transform.position - _mousePosition).normalized;
-            circleCenter = origin + direction * -distance;
-
-            _collider = Physics2D.OverlapCircle(circleCenter, radius);
-
-            if (_collider)
-            {
-                _collider.TryGetComponent(out FoodItem foodItem);
-                if (CurrentFoodType != foodItem.FoodType || foodItem._isSelected) return;
-                
-                DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(foodItem);
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            OnDrawGizmosSelected();
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(circleCenter, radius);
-        }
 
         // private int maxLevel;
         //

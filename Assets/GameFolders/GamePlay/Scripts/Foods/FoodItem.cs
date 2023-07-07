@@ -26,7 +26,7 @@ namespace ConnectedFoods.Game
                 foodSpriteRenderer.sprite = foodData.GetFoodSprite(foodType);
             }
         }
-
+        
         public GridNode GridNode { get; set; }
         
         public bool IsUsing { get; set; }
