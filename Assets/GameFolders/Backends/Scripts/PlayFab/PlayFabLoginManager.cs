@@ -47,10 +47,13 @@ namespace ConnectedFoods.Network
                 loginRequest,
                 result =>
                 {
-                    DataManager.Instance.EventData.OnLoginSucces?.Invoke();
+                    DataManager.Instance.EventData.OnLoginSuccess?.Invoke();
                     EntityId = result.EntityToken.Entity.Id;
                 },
-                error => { }
+                error =>
+                {
+                    DataManager.Instance.EventData.OnLoginError?.Invoke();
+                }
             );
         }
         

@@ -9,7 +9,8 @@ namespace ConnectedFoods.Core
     public class EventData : ScriptableObject
     {
         public Action<string> OnSetUsername { get; set; }
-        public Action OnLoginSucces { get; set; }
+        public Action OnLoginSuccess { get; set; }
+        public Action OnLoginError { get; set; }
         
         public Action<string , EntityKey> OnCreateClanObject { get; set; }
         

@@ -1,7 +1,5 @@
-using System;
 using ConnectedFoods.Core;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ConnectedFoods.UserInterface
@@ -13,24 +11,35 @@ namespace ConnectedFoods.UserInterface
 
         [SerializeField] private Button levelsButton;
         [SerializeField] private GameObject levelsPanel;
+
+        [SerializeField] private Image connectionErrorImage;
         
         private void OnEnable()
         {
-            DataManager.Instance.EventData.OnLoginSucces += OnChatPanelOpen;
+            DataManager.Instance.EventData.OnLoginSuccess += OnLoginSuccessHandler;
+            DataManager.Instance.EventData.OnLoginError += OnLoginErrorHandler;
             chatButton.onClick?.AddListener(ChatButtonOnClick);
             levelsButton.onClick?.AddListener(LevelsButtonOnClick);
         }
 
         private void OnDisable()
         {
-            DataManager.Instance.EventData.OnLoginSucces -= OnChatPanelOpen;
+            DataManager.Instance.EventData.OnLoginSuccess -= OnLoginSuccessHandler;
+            DataManager.Instance.EventData.OnLoginError -= OnLoginErrorHandler;
             chatButton.onClick?.RemoveListener(ChatButtonOnClick);
             levelsButton.onClick.RemoveListener(LevelsButtonOnClick);
         }
-        
-        private void OnChatPanelOpen()
+
+        private void OnLoginErrorHandler()
         {
-            chatButton.gameObject.SetActive(true);
+            chatButton.interactable = false;
+            connectionErrorImage.gameObject.SetActive(true);
+        }
+
+        private void OnLoginSuccessHandler()
+        {
+            chatButton.interactable = true;
+            connectionErrorImage.gameObject.SetActive(false);
         }
 
         private void ChatButtonOnClick()
@@ -42,11 +51,6 @@ namespace ConnectedFoods.UserInterface
         private void LevelsButtonOnClick()
         {
             levelsPanel.SetActive(!levelsPanel.activeSelf);
-        }
-
-        private void ExitButtonOnClick()
-        {
-            Application.Quit();
         }
     }
 }

@@ -33,8 +33,10 @@ namespace ConnectedFoods.UserInterface
         private int _blopGoalCount;
         private int _blueberriesGoalCount;
         private int _dragonFruitGoalCount;
+
+        private bool _isGameEnd;
         
-        private void Start()
+        private void Awake()
         {
             _level = GameManager.Instance.Level - 1;
 
@@ -65,14 +67,16 @@ namespace ConnectedFoods.UserInterface
             _totalFoodCount = _appleGoalCount + _bananaGoalCount + _blopGoalCount + _blueberriesGoalCount +
                               _dragonFruitGoalCount;
 
-            if (_totalFoodCount == 0 && _remainingMove >= 0)
+            if (_totalFoodCount == 0 && _remainingMove >= 0 && !_isGameEnd)
             {
                 _totalScore = _foodScore + _remainingMove;
                 DataManager.Instance.EventData.OnWinCondition?.Invoke(_totalScore);
+                _isGameEnd = true;
             }
-            else if(_totalFoodCount > 0 && _remainingMove == 0)
+            else if(_totalFoodCount > 0 && _remainingMove == 0 && !_isGameEnd)
             {
                 DataManager.Instance.EventData.OnLoseCondition?.Invoke(_foodScore);
+                _isGameEnd = true;
             }
             
         }

@@ -21,7 +21,7 @@ namespace ConnectedFoods.UserInterface
             DataManager.Instance.EventData.OnMatch -= RemainingCountHandler;
         }
 
-        private void Start()
+        private void Awake()
         {
             _level = GameManager.Instance.Level - 1;
             _remainingCount = DataManager.Instance.LevelData.LevelRemainingMove[_level];

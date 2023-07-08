@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7606539e0e4634987973635a11bb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
   eventData: {fileID: 11400000, guid: e4b27c614147fa8408e3cd492faf417e, type: 2}
   levelData: {fileID: 11400000, guid: 1840be07025cf6d46a71c231e94776bb, type: 2}

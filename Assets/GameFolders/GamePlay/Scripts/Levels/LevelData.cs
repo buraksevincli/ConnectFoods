@@ -21,7 +21,10 @@ namespace ConnectedFoods.Data
         public int[] LevelRequiredBlueberries => levelRequiredBlueberries;
         public int[] LevelRequiredDragonFruit => levelRequiredDragonFruit;
 
-        public int[] LevelHighScore => levelHighScore;
-
+        public int[] LevelHighScore
+        {
+            get => levelHighScore;
+            set => levelHighScore = value;
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using ConnectedFoods.Core;
 using TMPro;
 using UnityEngine;
@@ -8,9 +9,14 @@ namespace ConnectedFoods.UserInterface
     {
         [SerializeField] private GameObject resultPanel;
         [SerializeField] private TMP_Text resultText;
-        [SerializeField] private TMP_Text scoreCountText;
 
         private int _score;
+        private int _level;
+
+        private void Awake()
+        {
+            _level = GameManager.Instance.Level - 1;
+        }
 
         private void OnEnable()
         {
@@ -20,25 +26,32 @@ namespace ConnectedFoods.UserInterface
 
         private void OnDisable()
         {
-            DataManager.Instance.EventData.OnWinCondition -= WinConditionHandler;
             DataManager.Instance.EventData.OnLoseCondition -= LoseConditionHandler;
+            DataManager.Instance.EventData.OnWinCondition -= WinConditionHandler;
         }
 
         private void WinConditionHandler(int score)
         {
             _score = score;
             resultPanel.SetActive(true);
-            resultText.text = "TEBRIKLER !";
-            scoreCountText.text = _score.ToString();
+            resultText.text = $"TEBRIKLER ! \n SKORUNUZ \n {_score}";
+            GameManager.Instance.Level += 1;
+
+            if (_score > DataManager.Instance.LevelData.LevelHighScore[_level])
+            {
+                DataManager.Instance.LevelData.LevelHighScore[_level] = _score;
+            }
+            
+            GameManager.Instance.LoadMenuScene();
         }
 
         private void LoseConditionHandler(int score)
         {
             _score = score;
             resultPanel.SetActive(true);
-            resultText.text = "BASARAMADIK..";
-            scoreCountText.text = _score.ToString();
+            resultText.text = $"BASARAMADIK ! \n SKORUNUZ \n {_score}";
+            
+            GameManager.Instance.LoadMenuScene();
         }
-
     }
 }

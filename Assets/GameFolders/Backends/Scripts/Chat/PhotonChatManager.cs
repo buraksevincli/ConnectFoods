@@ -20,14 +20,13 @@ namespace ConnectedFoods.Network
         
         private ChatClient _chatClient;
 
-        private string _currentChat;
         //private string _privateReceiver = "";
         
         private bool _isConnected;
 
         private void OnEnable()
         {
-            DataManager.Instance.EventData.OnLoginSucces += ChatConnectOnClick;
+            DataManager.Instance.EventData.OnLoginSuccess += ChatConnectOnClick;
             sendMessageButton.onClick.AddListener(SendMessageButtonOnClick);
         }
 
@@ -41,15 +40,29 @@ namespace ConnectedFoods.Network
 
         private void OnDisable()
         {
-            DataManager.Instance.EventData.OnLoginSucces -= ChatConnectOnClick;
+            DataManager.Instance.EventData.OnLoginSuccess -= ChatConnectOnClick;
             sendMessageButton.onClick.RemoveListener(SendMessageButtonOnClick);
         }
+        
+        #region Setup
+
+        private void ChatConnectOnClick()
+        {
+            _isConnected = true;
+
+            _chatClient = new ChatClient(this);
+            
+            _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
+                new AuthenticationValues(PlayFabLoginManager.Instance.UsernamePlayerPrefs));
+        }
+
+        #endregion
 
         private void SendMessageButtonOnClick()
         {
             if (string.IsNullOrEmpty(privateReceiver.text))
             {
-                _chatClient.PublishMessage("RegionChannel", messageInput.text);
+                _chatClient.PublishMessage("GlobalChannel", messageInput.text);
                 messageInput.text = "";
             }
             else
@@ -64,31 +77,7 @@ namespace ConnectedFoods.Network
                 messageInput.text = "";
             }
         }
-
-        #region Setup
-
-        public void ChatConnectOnClick()
-        {
-            _isConnected = true;
-
-            _chatClient = new ChatClient(this);
-            
-            _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
-                new AuthenticationValues(PlayFabLoginManager.Instance.UsernamePlayerPrefs));
-            
-        }
-
-        #endregion
-
-        #region PublicChat
-
-        public void TypeChatOnValueChange(string valueIn)
-        {
-            _currentChat = valueIn;
-        }
-
-        #endregion
-
+        
         public void DebugReturn(DebugLevel level, string message)
         {
             
@@ -100,7 +89,7 @@ namespace ConnectedFoods.Network
 
         public void OnConnected()
         {
-            _chatClient.Subscribe(new string[] { "RegionChannel" });
+            _chatClient.Subscribe(new string[] { "GlobalChannel" });
         }
 
         public void OnChatStateChange(ChatState state)

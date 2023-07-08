@@ -6,52 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9b89ae-2989-4f32-bd3d-a29a4f47231f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3rdParts/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Popup_UserInfo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Popup_UserInfo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Chat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Chat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Clan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Clan.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/RuneFuse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/RuneFuse.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Stage_Select_Type2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Stage_Select_Type2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Stage_Select_Type2_Detail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Stage_Select_Type2_Detail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Tutorial_Hand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Tutorial_Hand.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/Chat/PhotonChatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/Chat/PhotonChatManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/DataManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/DataManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Managers/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scriptables.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scriptables/EventData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scriptables/EventData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/GameConst.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/GameConst.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/GameEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/GameEnum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/MonoSingleton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Utilities/MonoSingleton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[DataManager].prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[DataManager].prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[GameManager].prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[GameManager].prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Scriptables/EventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Scriptables/EventData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Prefabs/FoodItem.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Prefabs/FoodItem.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodContentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodContentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/LevelEditor.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/LevelEditor.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/ClanScrollViewUIController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/ClanScrollViewUIController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/CreateClanUIController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/CreateClanUIController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/GoalPanelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/GoalPanelController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/MovePanelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/MovePanelController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/PanelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/PanelController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/PlayFabLoginUIController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/PlayFabLoginUIController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/ResultPanelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/ResultPanelController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/UIClanController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/Controllers/UIClanController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Canvases/GameCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Canvases/GameCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/GoalPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/GoalPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/MovePanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/MovePanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/ResultPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/ResultPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +44,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/LineController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/OverlapCircleController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -152,6 +129,7 @@
       <workItem from="1688558765862" duration="60000" />
       <workItem from="1688688035519" duration="3644000" />
       <workItem from="1688730286733" duration="27519000" />
+      <workItem from="1688810994364" duration="10211000" />
     </task>
     <servers />
   </component>

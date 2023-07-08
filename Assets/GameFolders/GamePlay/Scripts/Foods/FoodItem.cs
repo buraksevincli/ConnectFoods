@@ -71,7 +71,7 @@ namespace ConnectedFoods.Game
         private void OnMouseEnter()
         {
             if (MatchController.Instance.currentFoodType != this.FoodType || _isSelected) return;
-
+        
             DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(this);
         }
 
