@@ -36,6 +36,8 @@ namespace ConnectedFoods.Game
             {
                 _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
                 _mousePosition = new Vector3(_mousePosition.x, _mousePosition.y, 0);
+                Vector3 linePosition = _mousePosition;
+                linePosition.z = transform.position.z;
 
                 if (_selectedItems.Count == 0) return;
                 
@@ -45,8 +47,11 @@ namespace ConnectedFoods.Game
                     direction.Normalize();
 
                     _mousePosition = _selectedItems[^1].transform.position + direction * maxDistance;
+                    linePosition = _mousePosition;
+                    linePosition.z = transform.position.z;
                 }
-                _lineController.LineRenderer(_selectedItems, _mousePosition);
+                
+                _lineController.LineRenderer(_selectedItems, linePosition);
                 _overlapCircleController.OverlapCircle(_mousePosition,radius);
                 
                 if (_selectedItems.Count > 1)

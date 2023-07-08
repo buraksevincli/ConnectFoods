@@ -7,7 +7,12 @@ namespace ConnectedFoods.Core
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        public int Level { get; set; }
+        public int Level
+        {
+            get => PlayerPrefs.GetInt("Level", 1);
+            set => PlayerPrefs.SetInt("Level", value);
+        }
+        
         public int SelectedLevel { get; set; }
 
         private WaitForSeconds _loadSceneTime;
@@ -16,11 +21,6 @@ namespace ConnectedFoods.Core
         {
             base.Awake();
             _loadSceneTime = new WaitForSeconds(5f);
-        }
-
-        private void Start()
-        {
-            Level = 1;
         }
 
         public void LoadMenuScene()

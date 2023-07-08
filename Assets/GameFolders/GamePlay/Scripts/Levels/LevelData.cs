@@ -22,7 +22,11 @@ namespace ConnectedFoods.Data
 
         public void SetHighScore(int level, int score)
         {
-            PlayerPrefs.SetInt($"Level{level}", score);
+            int oldScore = PlayerPrefs.GetInt($"Level{level}");
+            if (score > oldScore)
+            {
+                PlayerPrefs.SetInt($"Level{level}", score);
+            }
         }
 
         public int GetHighScore(int level)

@@ -19,8 +19,8 @@ namespace ConnectedFoods.Level
         public void Initiate(int level, LevelStatus status, Action<int> onClick)
         {
             button.onClick.AddListener(()=> onClick(level));
-            levelText.text = $"{level}";
-            scoreText.text = $"{DataManager.Instance.LevelData.GetHighScore(level)}";
+            levelText.text = $"Level {level}";
+            scoreText.text = $"Score {DataManager.Instance.LevelData.GetHighScore(level)}";
 
             switch (status)
             {
