@@ -836,16 +836,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa0966649d9884ea83750a379a2910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apple: {fileID: 3378344561453063051}
-  appleGoal: {fileID: 7435859856601769720}
-  banana: {fileID: 151230407911307915}
-  bananaGoal: {fileID: 8280834503094258014}
-  blop: {fileID: 3996743801168231325}
-  blopGoal: {fileID: 5131588318834469155}
-  blueberries: {fileID: 898324213834935739}
-  blueberriesGoal: {fileID: 7169750698764280253}
-  dragonFruit: {fileID: 4261021047703393644}
-  dragonFruitGoal: {fileID: 4729876424764040591}
+  goalItems:
+  - foodType: 1
+    foodGameObject: {fileID: 3378344561453063051}
+    foodText: {fileID: 7435859856601769720}
+  - foodType: 2
+    foodGameObject: {fileID: 151230407911307915}
+    foodText: {fileID: 8280834503094258014}
+  - foodType: 3
+    foodGameObject: {fileID: 3996743801168231325}
+    foodText: {fileID: 5131588318834469155}
+  - foodType: 4
+    foodGameObject: {fileID: 898324213834935739}
+    foodText: {fileID: 7169750698764280253}
+  - foodType: 5
+    foodGameObject: {fileID: 4261021047703393644}
+    foodText: {fileID: 4729876424764040591}
 --- !u!1 &10929757169824596
 GameObject:
   m_ObjectHideFlags: 0

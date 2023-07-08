@@ -3,21 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ConnectedFoods.Core;
-using Sirenix.OdinInspector;
-using UnityEditor;
+using ConnectedFoods.Game;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = Unity.Mathematics.Random;
 
-namespace ConnectedFoods.Game
+namespace ConnectedFoods.Level
 {
-    public class FoodContentController : MonoBehaviour
+    public class LevelManager : MonoSingleton<LevelManager>
     {
         [SerializeField] private FoodItem foodItemPrefab;
-        [SerializeField, Range(4, 9)] private int size;
-        [SerializeField] private Transform startPoint;
-
+        
+        private LevelInfo _levelInfo;
+        private Vector3 _spawnPosition;
+        
         private GridNode[,] _gridNodes;
         private readonly List<FoodItem> _foodItems = new List<FoodItem>();
+        
+        private void Start()
+        {
+            _levelInfo = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.SelectedLevel);
+            InitiateItems();
+        }
 
         private void OnEnable()
         {
@@ -28,30 +34,29 @@ namespace ConnectedFoods.Game
         {
             DataManager.Instance.EventData.OnMatch -= OnMatchHandler;
         }
-
-        private void Start()
-        {
-            InitiateItems();
-        }
-
+        
         private void InitiateItems()
         {
-            _gridNodes = new GridNode[size, size];
+            _gridNodes = new GridNode[_levelInfo.Size, _levelInfo.Size];
 
-            _foodItems.AddRange(GetComponentsInChildren<FoodItem>().ToList());
             
-            foreach (FoodItem foodItem in _foodItems)
+            for (int i = 0; i < (int)Mathf.Pow(_levelInfo.Size, 2); i++)
             {
-                foodItem.transform.position = startPoint.position;
-                foodItem.SetStartPosition(startPoint.position);
+                _spawnPosition = new Vector3(i % _levelInfo.Size,transform.position.y + (_levelInfo.Size * 0.5f + 0.5f), transform.position.z);
+
+                FoodItem foodItem = Instantiate(foodItemPrefab, transform);
+                foodItem.transform.position = _spawnPosition;
+                foodItem.SetStartPosition(_spawnPosition);
+                _foodItems.Add(foodItem);
+                foodItem.FoodType = (FoodType)UnityEngine.Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
             }
             
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < _levelInfo.Size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < _levelInfo.Size; j++)
                 {
-                    float x = j - size / 2f + 0.5f;
-                    float y = i - size / 2f + 0.5f;
+                    float x = j - _levelInfo.Size / 2f + 0.5f;
+                    float y = i - _levelInfo.Size / 2f + 0.5f;
                     
                     _gridNodes[j, i] = new GridNode
                     {
@@ -65,24 +70,24 @@ namespace ConnectedFoods.Game
             StartCoroutine(FillGrids());
         }
 
-        private void OnMatchHandler()
+        private void OnMatchHandler(FoodType foodType, int amount)
         {
             StartCoroutine(FillGrids());
         }
 
         private IEnumerator FillGrids()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < _levelInfo.Size; i++)
             {
                 bool foundedEmptyGrid = false;
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < _levelInfo.Size; j++)
                 {
                     foundedEmptyGrid = false;
                     if (_gridNodes[j,i].IsEmpty)
                     {
                          bool foundedFood = false;
                         
-                        for (int k = i; k < size; k++)
+                        for (int k = i; k < _levelInfo.Size; k++)
                         {
                             if (_gridNodes[j,k].IsEmpty) continue;
                         
@@ -103,7 +108,7 @@ namespace ConnectedFoods.Game
                         if (!foundedFood)
                         {
                             FoodItem foodItem = _foodItems.FirstOrDefault(foodItem => !foodItem.IsUsing);
-                            foodItem.FoodType = (FoodType)Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
+                            foodItem.FoodType = (FoodType)UnityEngine.Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
                             foodItem.IsUsing = true;
                             _gridNodes[j,i].IsEmpty = false;
                             _gridNodes[j,i].FoodItem = foodItem;
@@ -134,40 +139,5 @@ namespace ConnectedFoods.Game
                 }
             }
         }
-
-#if UNITY_EDITOR
-        [Button]
-        private void Create()
-        {
-            Clear();
-
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    FoodItem foodItem = PrefabUtility.InstantiatePrefab(foodItemPrefab, transform) as FoodItem;
-                    
-                    float scale = foodItem.transform.localScale.x;
-                    float x = j - size / 2f + scale / 2f;
-                    float y = i - size / 2f + scale / 2f;
-
-                    foodItem.transform.localPosition = new Vector3(x, y, 0);
-                    foodItem.FoodType = (FoodType)Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
-                }
-            }
-        }
-
-        [Button]
-        private void Clear()
-        {
-            FoodItem[] items = GetComponentsInChildren<FoodItem>();
-
-            foreach (FoodItem foodItem in items)
-            {
-                DestroyImmediate(foodItem.gameObject);
-            }
-        }
-#endif
-        
     }
 }

@@ -8,7 +8,6 @@ namespace ConnectedFoods.UserInterface
     {
         [SerializeField] private TMP_Text remainingMoveCount;
 
-        private int _level;
         private int _remainingCount;
 
         private void OnEnable()
@@ -23,13 +22,12 @@ namespace ConnectedFoods.UserInterface
 
         private void Awake()
         {
-            _level = GameManager.Instance.Level - 1;
-            _remainingCount = DataManager.Instance.LevelData.LevelRemainingMove[_level];
+            _remainingCount = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.Level).RemainingMove;
 
             remainingMoveCount.text = _remainingCount.ToString();
         }
 
-        private void RemainingCountHandler()
+        private void RemainingCountHandler(FoodType foodType, int amount)
         {
             if (_remainingCount < 0) return;
             

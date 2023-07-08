@@ -12,7 +12,6 @@ namespace ConnectedFoods.Game
         [SerializeField] private float radius;
 
         [NonSerialized] public FoodType currentFoodType;
-        [NonSerialized] public int listCount;
 
         private readonly List<FoodItem> _selectedItems = new List<FoodItem>();
 
@@ -113,8 +112,7 @@ namespace ConnectedFoods.Game
                     selectedItem.OnMatch();
                 }
 
-                listCount = _selectedItems.Count;
-                DataManager.Instance.EventData.OnMatch?.Invoke();
+                DataManager.Instance.EventData.OnMatch?.Invoke(currentFoodType, _selectedItems.Count);
             }
 
             currentFoodType = FoodType.None;
@@ -131,21 +129,6 @@ namespace ConnectedFoods.Game
         {
             _overlapCircleController?.OnDrawGizmosSelected();
         }
-
-
-        // private int maxLevel;
-        //
-        // public int Level
-        // {
-        //     
-        //     get => PlayerPrefs.GetInt("Level", 1);
-        //     set
-        //     {
-        //         if (value <= maxLevel)
-        //         {
-        //             PlayerPrefs.SetInt("Level", value);
-        //         }
-        //     }
-        // }
+        
     }
 }

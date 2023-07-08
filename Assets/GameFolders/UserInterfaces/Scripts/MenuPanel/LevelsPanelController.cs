@@ -1,4 +1,5 @@
 using ConnectedFoods.Core;
+using ConnectedFoods.Level;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -8,30 +9,40 @@ namespace ConnectedFoods.UserInterface
 {
     public class LevelsPanelController : MonoBehaviour
     {
-        [SerializeField] private Button[] levelButtons;
-        [SerializeField] private TMP_Text[] scoreTexts;
-
-        private int _level;
+        [SerializeField] private LevelButtonItem levelButtonItemPrefab;
+        [SerializeField] private RectTransform contentRectTransform;
 
         private void Start()
         {
-            _level = GameManager.Instance.Level -1;
+            int maxLevel = DataManager.Instance.LevelData.MaxLevel;
 
-            for (int i = 0; i <= _level; i++)
+            for (int i = 0; i <= maxLevel; i++)
             {
-                levelButtons[i].interactable = true;
-                if (levelButtons[i].interactable)
+                LevelButtonItem levelButtonItem = Instantiate(levelButtonItemPrefab, contentRectTransform);
+
+                LevelStatus levelStatus;
+                
+                if ((i + 1) < GameManager.Instance.Level)
                 {
-                    scoreTexts[i].text = $"Score: {DataManager.Instance.LevelData.LevelHighScore[i]}";
-                    int levelIndex = i;
-                    levelButtons[i].onClick?.AddListener(()=> { OnClickLoadLevel(levelIndex); });
+                    levelStatus = LevelStatus.Active;
                 }
+                else if ((i + 1) == GameManager.Instance.Level)
+                {
+                    levelStatus = LevelStatus.Current;
+                }
+                else
+                {
+                    levelStatus = LevelStatus.Deactivate;
+                }
+                
+                levelButtonItem.Initiate((i + 1), levelStatus, OnClickLoadLevel);
             }
         }
 
         private void OnClickLoadLevel(int level)
         {
-            SceneManager.LoadScene(level+1);
+            GameManager.Instance.SelectedLevel = level;
+            SceneManager.LoadScene(1);
         }
     }
 }

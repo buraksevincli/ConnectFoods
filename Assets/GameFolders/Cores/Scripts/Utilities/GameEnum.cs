@@ -8,3 +8,10 @@ public enum FoodType
     Blueberries = 4,
     DragonFruit = 5
 }
+
+public enum LevelStatus
+{
+    Active,
+    Current,
+    Deactivate
+}

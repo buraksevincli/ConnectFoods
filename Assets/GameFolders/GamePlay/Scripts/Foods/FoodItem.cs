@@ -14,6 +14,8 @@ namespace ConnectedFoods.Game
         
         private Transform _transform;
         private Vector3 _startPosition;
+        
+        private bool _isFirstInitialize;
 
         public bool _isSelected;
 
@@ -36,11 +38,6 @@ namespace ConnectedFoods.Game
             _transform = GetComponent<Transform>(); // For performance
         }
 
-        private void Start()
-        {
-            visualObject.SetActive(false);
-        }
-
         private void OnValidate()
         {
             if (foodData != null && foodSpriteRenderer != null && foodType != FoodType.None)
@@ -54,6 +51,11 @@ namespace ConnectedFoods.Game
             visualObject.SetActive(true);
             Vector3 localPosition = _transform.localPosition;
             _transform.localPosition = new Vector3(GridNode.Position.x, localPosition.y, localPosition.z);
+            if (_isFirstInitialize)
+            {
+                _isFirstInitialize = false;
+                visualObject.SetActive(true);
+            }
             _transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
         }
 
@@ -95,6 +97,8 @@ namespace ConnectedFoods.Game
         public void SetStartPosition(Vector3 startPosition)
         {
             _startPosition = startPosition;
+            _isFirstInitialize = true;
+            visualObject.SetActive(false);
         }
     }
 }

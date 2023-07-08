@@ -37,10 +37,10 @@ namespace ConnectedFoods.UserInterface
             resultText.text = $"TEBRIKLER ! \n SKORUNUZ \n {_score}";
             GameManager.Instance.Level += 1;
 
-            if (_score > DataManager.Instance.LevelData.LevelHighScore[_level])
-            {
-                DataManager.Instance.LevelData.LevelHighScore[_level] = _score;
-            }
+            // if (_score > DataManager.Instance.LevelData.LevelHighScore[_level])
+            // {
+            //     DataManager.Instance.LevelData.LevelHighScore[_level] = _score;
+            // }
             
             GameManager.Instance.LoadMenuScene();
         }

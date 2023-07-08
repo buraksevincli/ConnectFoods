@@ -15,7 +15,7 @@ namespace ConnectedFoods.Core
         public Action<string , EntityKey> OnCreateClanObject { get; set; }
         
         public Action<FoodItem> OnSelectFoodItem { get; set; }
-        public Action OnMatch { get; set; }
+        public Action<FoodType, int> OnMatch { get; set; }
         
         public Action<int> OnCheckRemainingMove { get; set; }
         public Action<int> OnWinCondition { get; set; }
