@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ConnectedFoods.UserInterface
 {
     [Serializable]
-    public struct GoalPanelItem
+    public class GoalPanelItem
     {
         [SerializeField] private FoodType foodType;
         [SerializeField] private GameObject foodGameObject;
