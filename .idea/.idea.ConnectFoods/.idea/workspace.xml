@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9b89ae-2989-4f32-bd3d-a29a4f47231f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/PSD/PSD.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_ItemIcons(x2)/ItemIcons(x2).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_PictoIcons(x2)/PictoIcons(x2).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_RuneIcons(x2)/RuneIcons(x2).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/GoalPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/GoalPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/MovePanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/GamePanel/MovePanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[PlayFabLoginManager].prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[PlayFabLoginManager].prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\HP\Documents\GitHub\ConnectFoods -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\HP\Documents\GitHub\ConnectFoods" />
       <option name="PASS_PARENT_ENVS" value="1" />

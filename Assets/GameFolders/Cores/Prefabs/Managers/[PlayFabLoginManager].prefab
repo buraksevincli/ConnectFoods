@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425ba643b5a8c428488b53600d240353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   usernamePanel: {fileID: 0}
   levelsButton: {fileID: 0}
   chatButton: {fileID: 0}
