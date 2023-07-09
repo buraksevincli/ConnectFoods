@@ -85,7 +85,6 @@ namespace ConnectedFoods.Network
                     SetDisplayName();
                     LoginWithPlayFabAccount();
                     DataManager.Instance.EventData.OnSetUsername?.Invoke(UsernamePlayerPrefs);
-                    Debug.Log("Success Register");
                     onLoginSuccess?.Invoke("Register Success !");
                 },
                 error => { onLoginErrorAction?.Invoke(error.ErrorMessage); }
@@ -103,8 +102,8 @@ namespace ConnectedFoods.Network
             PlayFabClientAPI.UpdateUserTitleDisplayName
             (
                 displayNameRequest,
-                result => { Debug.Log("Success Display Name"); },
-                error => { Debug.Log(error.ErrorMessage); }
+                result => {  },
+                error => {  }
             );
         }
     }

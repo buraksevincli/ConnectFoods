@@ -15,53 +15,131 @@ MonoBehaviour:
   levelInfos:
   - level: 1
     size: 4
-    remainingMove: 9
-    requiredFoods: []
+    remainingMove: 6
+    requiredFoods:
+    - foodType: 1
+      amount: 3
+    - foodType: 2
+      amount: 3
   - level: 2
-    size: 5
-    remainingMove: 16
-    requiredFoods: []
+    size: 4
+    remainingMove: 10
+    requiredFoods:
+    - foodType: 4
+      amount: 5
+    - foodType: 5
+      amount: 5
   - level: 3
     size: 5
-    remainingMove: 8
-    requiredFoods: []
+    remainingMove: 14
+    requiredFoods:
+    - foodType: 1
+      amount: 6
+    - foodType: 3
+      amount: 4
+    - foodType: 4
+      amount: 8
   - level: 4
     size: 5
-    remainingMove: 8
-    requiredFoods: []
+    remainingMove: 13
+    requiredFoods:
+    - foodType: 2
+      amount: 5
+    - foodType: 3
+      amount: 3
+    - foodType: 5
+      amount: 9
   - level: 5
-    size: 5
-    remainingMove: 8
-    requiredFoods: []
+    size: 6
+    remainingMove: 16
+    requiredFoods:
+    - foodType: 1
+      amount: 5
+    - foodType: 2
+      amount: 7
+    - foodType: 4
+      amount: 6
+    - foodType: 5
+      amount: 3
   - level: 6
-    size: 5
-    remainingMove: 8
-    requiredFoods: []
+    size: 6
+    remainingMove: 15
+    requiredFoods:
+    - foodType: 1
+      amount: 6
+    - foodType: 2
+      amount: 5
+    - foodType: 3
+      amount: 8
+    - foodType: 4
+      amount: 9
   - level: 7
-    size: 5
-    remainingMove: 8
-    requiredFoods: []
+    size: 7
+    remainingMove: 18
+    requiredFoods:
+    - foodType: 1
+      amount: 12
+    - foodType: 4
+      amount: 15
   - level: 8
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
+    size: 7
+    remainingMove: 21
+    requiredFoods:
+    - foodType: 2
+      amount: 15
+    - foodType: 3
+      amount: 9
+    - foodType: 5
+      amount: 12
   - level: 9
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
+    size: 8
+    remainingMove: 15
+    requiredFoods:
+    - foodType: 1
+      amount: 5
+    - foodType: 2
+      amount: 3
+    - foodType: 3
+      amount: 9
+    - foodType: 4
+      amount: 7
   - level: 10
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
+    size: 8
+    remainingMove: 13
+    requiredFoods:
+    - foodType: 2
+      amount: 6
+    - foodType: 3
+      amount: 9
+    - foodType: 4
+      amount: 8
+    - foodType: 5
+      amount: 9
   - level: 11
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
+    size: 9
+    remainingMove: 25
+    requiredFoods:
+    - foodType: 1
+      amount: 15
+    - foodType: 2
+      amount: 10
+    - foodType: 3
+      amount: 12
+    - foodType: 4
+      amount: 13
+    - foodType: 5
+      amount: 11
   - level: 12
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
-  - level: 13
-    size: 4
-    remainingMove: 8
-    requiredFoods: []
+    size: 9
+    remainingMove: 99
+    requiredFoods:
+    - foodType: 1
+      amount: 99
+    - foodType: 2
+      amount: 99
+    - foodType: 3
+      amount: 99
+    - foodType: 4
+      amount: 99
+    - foodType: 5
+      amount: 99

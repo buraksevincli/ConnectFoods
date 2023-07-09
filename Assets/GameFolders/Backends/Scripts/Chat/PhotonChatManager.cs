@@ -19,8 +19,6 @@ namespace ConnectedFoods.Network
         [SerializeField] private Button sendMessageButton;
         
         private ChatClient _chatClient;
-
-        //private string _privateReceiver = "";
         
         private bool _isConnected;
 
@@ -69,7 +67,6 @@ namespace ConnectedFoods.Network
             {
                 if (privateReceiver.text.Length < 3)
                 {
-                    Debug.Log("DOLDUR");
                     return;
                 }
                 

@@ -17,7 +17,6 @@ namespace ConnectedFoods.Data
         
         public LevelInfo GetLevelInfo(int level)
         {
-            //return levelInfos.FirstOrDefault(levelInfo => levelInfo.Level == level);
             return levelInfos[level -1];
         }
 
