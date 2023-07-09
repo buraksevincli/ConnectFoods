@@ -1,5 +1,6 @@
 using ConnectedFoods.Core;
 using ConnectedFoods.Data;
+using ConnectedFoods.Effect;
 using DG.Tweening;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace ConnectedFoods.Game
         [SerializeField] private FoodData foodData;
         [SerializeField] private SpriteRenderer foodSpriteRenderer;
         [SerializeField] private GameObject visualObject;
+        [SerializeField] private Transform effectReferenceTransform;
         
         private Transform _transform;
         private Vector3 _startPosition;
@@ -54,13 +56,13 @@ namespace ConnectedFoods.Game
             if (_isFirstInitialize)
             {
                 _isFirstInitialize = false;
-                visualObject.SetActive(true);
             }
             _transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
         }
 
         public void OnMatch()
         {
+            BrokenEffector.Instance.Broke(effectReferenceTransform.position);
             _transform.localScale = Vector3.one;
             _transform.localPosition = _startPosition;
             IsUsing = false;
@@ -79,6 +81,8 @@ namespace ConnectedFoods.Game
 
         private void OnMouseDown()
         {
+            if (!MatchController.Instance.CanSelect) return;
+
             _isSelected = true;
             DataManager.Instance.EventData.OnSelectFoodItem?.Invoke(this);
         }

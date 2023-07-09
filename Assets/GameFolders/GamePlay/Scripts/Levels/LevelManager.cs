@@ -138,6 +138,10 @@ namespace ConnectedFoods.Level
                     yield return null;
                 }
             }
+
+            yield return new WaitForSeconds(0.5f);
+
+            MatchController.Instance.CanSelect = true;
         }
     }
 }

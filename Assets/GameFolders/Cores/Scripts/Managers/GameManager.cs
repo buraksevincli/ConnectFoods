@@ -12,6 +12,8 @@ namespace ConnectedFoods.Core
             get => PlayerPrefs.GetInt("Level", 1);
             set => PlayerPrefs.SetInt("Level", value);
         }
+
+        public GameState LastGameState { get; set; } = GameState.None;
         
         public int SelectedLevel { get; set; }
 

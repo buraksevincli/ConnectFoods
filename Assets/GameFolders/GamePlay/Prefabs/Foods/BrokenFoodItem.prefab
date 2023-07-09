@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3596096845056842823}
+  - component: {fileID: 5543985038507172155}
   m_Layer: 0
   m_Name: BrokenFoodItem
   m_TagString: Untagged
@@ -36,9 +37,30 @@ Transform:
   - {fileID: 3596096846866736011}
   - {fileID: 3596096846323896706}
   - {fileID: 3596096846672429389}
+  - {fileID: 1033245269381701972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5543985038507172155
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596096845056842816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a1f8646fe1c341bfb0f9f7e3d123b92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3596096845933988134
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,3 +733,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5045334137268706568
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3596096845056842823}
+    m_Modifications:
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -37.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213005213849675514, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_Name
+      value: BubbleBlastBigUnderwater
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213825244076994520, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+--- !u!4 &1033245269381701972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5211354934650666076, guid: 7691dd08d3a0949069d0408e3e23d3c7, type: 3}
+  m_PrefabInstance: {fileID: 5045334137268706568}
+  m_PrefabAsset: {fileID: 0}

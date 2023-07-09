@@ -22,7 +22,7 @@ namespace ConnectedFoods.UserInterface
 
         private void Awake()
         {
-            _remainingCount = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.Level).RemainingMove;
+            _remainingCount = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.SelectedLevel).RemainingMove;
 
             remainingMoveCount.text = _remainingCount.ToString();
         }

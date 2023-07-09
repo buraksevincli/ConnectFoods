@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ConnectedFoods.Core;
 using ConnectedFoods.Level;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -25,7 +26,12 @@ namespace ConnectedFoods.Data
             int oldScore = PlayerPrefs.GetInt($"Level{level}");
             if (score > oldScore)
             {
+                GameManager.Instance.LastGameState = GameState.HighScoreWin;
                 PlayerPrefs.SetInt($"Level{level}", score);
+            }
+            else
+            {
+                GameManager.Instance.LastGameState = GameState.Win;
             }
         }
 

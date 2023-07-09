@@ -16,7 +16,7 @@ namespace ConnectedFoods.UserInterface
         {
             int maxLevel = DataManager.Instance.LevelData.MaxLevel;
 
-            for (int i = 0; i <= maxLevel; i++)
+            for (int i = 0; i < maxLevel; i++)
             {
                 LevelButtonItem levelButtonItem = Instantiate(levelButtonItemPrefab, contentRectTransform);
 

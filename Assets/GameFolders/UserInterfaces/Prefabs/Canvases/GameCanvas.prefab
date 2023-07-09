@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultPanel: {fileID: 2060023847716889683}
+  frontPanel: {fileID: 10929755853652319}
+  resultBackgroundImage: {fileID: 7188571544656291616}
   resultText: {fileID: 10929757463734945}
   backgroundRectTransform: {fileID: 10929755853652288}
   fillBarImage: {fileID: 5952335774311267001}

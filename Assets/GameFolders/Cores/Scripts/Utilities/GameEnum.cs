@@ -15,3 +15,11 @@ public enum LevelStatus
     Current,
     Deactivate
 }
+
+public enum GameState
+{
+    None,
+    Win,
+    HighScoreWin,
+    Lose
+}

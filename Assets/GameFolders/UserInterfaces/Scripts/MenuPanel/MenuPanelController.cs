@@ -1,3 +1,4 @@
+using System;
 using ConnectedFoods.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ namespace ConnectedFoods.UserInterface
         [SerializeField] private GameObject levelsPanel;
 
         [SerializeField] private Image connectionErrorImage;
+        [SerializeField] private GameObject confettiPanel;
         
         private void OnEnable()
         {
@@ -28,6 +30,27 @@ namespace ConnectedFoods.UserInterface
             DataManager.Instance.EventData.OnLoginError -= OnLoginErrorHandler;
             chatButton.onClick?.RemoveListener(ChatButtonOnClick);
             levelsButton.onClick.RemoveListener(LevelsButtonOnClick);
+        }
+
+        private void Start()
+        {
+            switch (GameManager.Instance.LastGameState)
+            {
+                case GameState.None:
+                    break;
+                case GameState.Win:
+                    LevelsButtonOnClick();
+                    GameManager.Instance.LastGameState = GameState.None;
+                    break;
+                case GameState.HighScoreWin:
+                    LevelsButtonOnClick();
+                    confettiPanel.SetActive(true);
+                    GameManager.Instance.LastGameState = GameState.None;
+                    break;
+                case GameState.Lose:
+                    GameManager.Instance.LastGameState = GameState.None;
+                    break;
+            }
         }
 
         private void OnLoginErrorHandler()
@@ -51,6 +74,8 @@ namespace ConnectedFoods.UserInterface
         private void LevelsButtonOnClick()
         {
             levelsPanel.SetActive(!levelsPanel.activeSelf);
+            levelsButton.gameObject.SetActive(false);
+            chatButton.gameObject.SetActive(false);
         }
     }
 }

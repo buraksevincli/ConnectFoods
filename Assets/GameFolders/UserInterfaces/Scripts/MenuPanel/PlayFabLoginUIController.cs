@@ -38,12 +38,12 @@ namespace ConnectedFoods.Network
         
         private void UsernameConfirmButtonOnClick()
         {
-            PlayFabLoginManager.Instance.RegisterWithPlayFabID(usernameInputField.text , onLoginError);
+            PlayFabLoginManager.Instance.RegisterWithPlayFabID(usernameInputField.text , onLoginError, ()=> playFabLoginPanel.SetActive(false));
         }
         
-        private void OnLoginErrorTextUpdate(string errorMessage)
+        private void OnLoginErrorTextUpdate(string message)
         {
-            this.errorMessage.text = errorMessage;
+            errorMessage.text = message;
         }
     }
 }

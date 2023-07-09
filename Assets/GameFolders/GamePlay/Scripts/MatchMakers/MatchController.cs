@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using ConnectedFoods.Core;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace ConnectedFoods.Game
 
         private Vector3 _mousePosition;
         private Camera _camera;
+        
+        public bool CanSelect { get; set; }
 
         protected override void Awake()
         {
@@ -109,22 +112,33 @@ namespace ConnectedFoods.Game
                 {
                     selectedItem.SelectionReset();
                 }
+                _selectedItems.Clear();
+                currentFoodType = FoodType.None;
             }
             else
             {
-                foreach (FoodItem selectedItem in _selectedItems)
-                {
-                    selectedItem.OnMatch();
-                }
-
-                DataManager.Instance.EventData.OnMatch?.Invoke(currentFoodType, _selectedItems.Count);
+                StartCoroutine(MatchCoroutine());
             }
 
-            currentFoodType = FoodType.None;
-            _selectedItems.Clear();
             _lineController.LineDisable();
         }
-        
+
+        private IEnumerator MatchCoroutine()
+        {
+            CanSelect = false;
+            
+            foreach (FoodItem selectedItem in _selectedItems)
+            {
+                selectedItem.OnMatch();
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            DataManager.Instance.EventData.OnMatch?.Invoke(currentFoodType, _selectedItems.Count);
+            
+            currentFoodType = FoodType.None;
+            _selectedItems.Clear();
+        }
+
         private void OnDrawGizmos()
         {
             OnDrawGizmosSelected();

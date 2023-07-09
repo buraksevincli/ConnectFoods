@@ -56,8 +56,9 @@ namespace ConnectedFoods.Network
                 }
             );
         }
-        
-        public void RegisterWithPlayFabID(string username, Action<string> onLoginErrorAction)
+
+
+        public void RegisterWithPlayFabID(string username, Action<string> onLoginErrorAction, Action onLoginSuccess = null)
         {
             RegisterPlayFabUserRequest registerRequest = new RegisterPlayFabUserRequest()
             {
@@ -76,6 +77,7 @@ namespace ConnectedFoods.Network
                     LoginWithPlayFabAccount();
                     DataManager.Instance.EventData.OnSetUsername?.Invoke(UsernamePlayerPrefs);
                     Debug.Log("Success Register");
+                    onLoginSuccess?.Invoke();
                 },
                 error => { onLoginErrorAction?.Invoke(error.ErrorMessage); }
             );
