@@ -48,6 +48,5 @@ namespace ConnectedFoods.Data
             }
         }
 #endif
-        
     }
 }

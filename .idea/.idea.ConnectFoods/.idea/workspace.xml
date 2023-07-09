@@ -6,22 +6,37 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9b89ae-2989-4f32-bd3d-a29a4f47231f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/PSD/PSD.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_ItemIcons(x2)/ItemIcons(x2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_PictoIcons(x2)/PictoIcons(x2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_RuneIcons(x2)/RuneIcons(x2).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/BubbleBlastBigUnderwater.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/BubbleBlastBigUnderwater.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/bubble_round3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/bubble_round3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/bubble_round3_ADD.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/bubble_round3_ADD.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/circle_AB.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/circle_AB.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/glow1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/glow1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/glow1_ADD.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetFolders/VFX/glow1_ADD.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Managers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Datas/LevelData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Prefabs/Utilities/MatchController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Prefabs/Utilities/MatchController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/GridNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/GridNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Prefabs/Clan.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Prefabs/Clan/Clan.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Prefabs/Clan/Clan.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Level/LevelButtonItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Level/LevelButtonItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Level/LevelsPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Prefabs/Level/LevelsPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/PlayFabLoginUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/PlayFabLoginUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/Structs/LevelButtonItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/Structs/LevelButtonItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/../BallGuys/Assets/GameFolders/UserInterface/Lobby/LobbyUIManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabClanManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Effector/ConfettiEffector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/MatchMakers/LineController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,23 +66,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "rider.run.widget.enabled.cache": "false",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\HP\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\HP\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\HP\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\HP\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\HP\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\HP\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Standalone Player.Standalone Player">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../Unity Builts/StudyCases/ConnectFoods\ConnectFoods.exe" />
@@ -85,7 +104,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.2f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\HP\Documents\GitHub\ConnectFoods -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\HP\Documents\GitHub\ConnectFoods" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -126,11 +145,22 @@
       <workItem from="1688730286733" duration="27519000" />
       <workItem from="1688810994364" duration="10211000" />
       <workItem from="1688896115232" duration="6153000" />
+      <workItem from="1688903404362" duration="15657000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="162" />
+    <coverage-tree-state>
+      <expand />
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />

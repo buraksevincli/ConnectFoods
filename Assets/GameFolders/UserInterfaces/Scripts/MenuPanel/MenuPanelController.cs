@@ -14,7 +14,6 @@ namespace ConnectedFoods.UserInterface
         [SerializeField] private GameObject levelsPanel;
 
         [SerializeField] private Image connectionErrorImage;
-        [SerializeField] private GameObject confettiPanel;
 
         [SerializeField] private GameObject loginPanel;
         
@@ -42,15 +41,11 @@ namespace ConnectedFoods.UserInterface
                     break;
                 case GameState.Win:
                     LevelsButtonOnClick();
-                    GameManager.Instance.LastGameState = GameState.None;
                     break;
                 case GameState.HighScoreWin:
                     LevelsButtonOnClick();
-                    confettiPanel.SetActive(true);
-                    GameManager.Instance.LastGameState = GameState.None;
                     break;
                 case GameState.Lose:
-                    GameManager.Instance.LastGameState = GameState.None;
                     break;
             }
         }

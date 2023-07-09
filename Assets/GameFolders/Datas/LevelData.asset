@@ -14,32 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfos:
   - level: 1
-    size: 6
-    remainingMove: 10
-    requiredFoods:
-    - foodType: 1
-      amount: 5
-    - foodType: 2
-      amount: 3
-    - foodType: 4
-      amount: 4
+    size: 4
+    remainingMove: 9
+    requiredFoods: []
   - level: 2
-    size: 6
+    size: 5
     remainingMove: 16
-    requiredFoods:
-    - foodType: 3
-      amount: 2
-    - foodType: 4
-      amount: 2
-    - foodType: 2
-      amount: 3
-    - foodType: 1
-      amount: 1
+    requiredFoods: []
   - level: 3
-    size: 6
-    remainingMove: 17
-    requiredFoods:
-    - foodType: 1
-      amount: 2
-    - foodType: 5
-      amount: 3
+    size: 5
+    remainingMove: 8
+    requiredFoods: []
+  - level: 4
+    size: 5
+    remainingMove: 8
+    requiredFoods: []
+  - level: 5
+    size: 5
+    remainingMove: 8
+    requiredFoods: []
+  - level: 6
+    size: 5
+    remainingMove: 8
+    requiredFoods: []
+  - level: 7
+    size: 5
+    remainingMove: 8
+    requiredFoods: []
+  - level: 8
+    size: 4
+    remainingMove: 8
+    requiredFoods: []
+  - level: 9
+    size: 4
+    remainingMove: 8
+    requiredFoods: []
+  - level: 10
+    size: 4
+    remainingMove: 8
+    requiredFoods: []
+  - level: 11
+    size: 4
+    remainingMove: 8
+    requiredFoods: []
+  - level: 12
+    size: 4
+    remainingMove: 8
+    requiredFoods: []
+  - level: 13
+    size: 4
+    remainingMove: 8
+    requiredFoods: []

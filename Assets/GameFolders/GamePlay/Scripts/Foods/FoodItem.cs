@@ -16,8 +16,7 @@ namespace ConnectedFoods.Game
         
         private Transform _transform;
         private Vector3 _startPosition;
-        
-        private bool _isFirstInitialize;
+        private Tween _moveTween;
 
         public bool _isSelected;
 
@@ -53,15 +52,18 @@ namespace ConnectedFoods.Game
             visualObject.SetActive(true);
             Vector3 localPosition = _transform.localPosition;
             _transform.localPosition = new Vector3(GridNode.Position.x, localPosition.y, localPosition.z);
-            if (_isFirstInitialize)
-            {
-                _isFirstInitialize = false;
-            }
-            _transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
+            _moveTween = _transform.DOLocalMoveY(GridNode.Position.y, 0.5f);
         }
 
         public void OnMatch()
         {
+            if (_moveTween != null)
+            {
+                if (_moveTween.IsPlaying())
+                {
+                    _moveTween.Kill();
+                }
+            }
             BrokenEffector.Instance.Broke(effectReferenceTransform.position);
             _transform.localScale = Vector3.one;
             _transform.localPosition = _startPosition;
@@ -101,7 +103,6 @@ namespace ConnectedFoods.Game
         public void SetStartPosition(Vector3 startPosition)
         {
             _startPosition = startPosition;
-            _isFirstInitialize = true;
             visualObject.SetActive(false);
         }
     }

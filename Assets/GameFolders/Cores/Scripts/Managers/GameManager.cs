@@ -16,6 +16,7 @@ namespace ConnectedFoods.Core
         public GameState LastGameState { get; set; } = GameState.None;
         
         public int SelectedLevel { get; set; }
+        public bool IsOpenNewLevel{ get; set; }
 
         private WaitForSeconds _loadSceneTime;
 
