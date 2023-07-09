@@ -2,6 +2,7 @@ using System;
 using ConnectedFoods.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ConnectedFoods.Network
@@ -12,15 +13,17 @@ namespace ConnectedFoods.Network
         [SerializeField] private TMP_InputField usernameInputField;
         [SerializeField] private GameObject playFabLoginPanel;
         [SerializeField] private Button usernameConfirmButton;
-        [SerializeField] private TMP_Text errorMessage;
+        [SerializeField] private TMP_Text infoMessage;
 
         private Action<string> onLoginError;
+        private Action<string> onLoginSuccess;
 
         private void OnEnable()
         {
             usernameConfirmButton.onClick?.AddListener(UsernameConfirmButtonOnClick);
             usernameInputField.onValueChanged?.AddListener(UsernameInputFieldOnValueChanged);
             onLoginError += OnLoginErrorTextUpdate;
+            onLoginSuccess += OnLoginSuccessTextUpdate;
         }
 
         private void OnDisable()
@@ -28,22 +31,28 @@ namespace ConnectedFoods.Network
             usernameConfirmButton.onClick?.RemoveListener(UsernameConfirmButtonOnClick);
             usernameInputField.onValueChanged?.AddListener(UsernameInputFieldOnValueChanged);
             onLoginError -= OnLoginErrorTextUpdate;
+            onLoginSuccess -= OnLoginSuccessTextUpdate;
         }
 
         private void UsernameInputFieldOnValueChanged(string inputField)
         {
-            errorMessage.gameObject.SetActive(false);
+            infoMessage.text = "";
             usernameConfirmButton.interactable = usernameInputField.text.Length > GameConst.MIN_USERNAME_LENGHT;
         }
         
         private void UsernameConfirmButtonOnClick()
         {
-            PlayFabLoginManager.Instance.RegisterWithPlayFabID(usernameInputField.text , onLoginError, ()=> playFabLoginPanel.SetActive(false));
+            PlayFabLoginManager.Instance.RegisterWithPlayFabID(usernameInputField.text , onLoginError, onLoginSuccess);
         }
         
         private void OnLoginErrorTextUpdate(string message)
         {
-            errorMessage.text = message;
+            infoMessage.text = message;
+        }
+        
+        private void OnLoginSuccessTextUpdate(string message)
+        {
+            infoMessage.text = message;
         }
     }
 }

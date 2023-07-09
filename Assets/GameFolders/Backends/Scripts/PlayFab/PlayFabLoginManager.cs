@@ -3,6 +3,8 @@ using ConnectedFoods.Core;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 namespace ConnectedFoods.Network
@@ -10,6 +12,9 @@ namespace ConnectedFoods.Network
     public class PlayFabLoginManager : MonoSingleton<PlayFabLoginManager>
     {
         [SerializeField] private GameObject usernamePanel;
+        [SerializeField] private Button levelsButton;
+        [SerializeField] private Button chatButton;
+        
         public string UsernamePlayerPrefs
         {
             get => PlayerPrefs.GetString(GameConst.PLAYER_USERNAME);
@@ -27,10 +32,15 @@ namespace ConnectedFoods.Network
             if (string.IsNullOrEmpty(UsernamePlayerPrefs))
             {
                 usernamePanel.gameObject.SetActive(true);
+                levelsButton.interactable = false;
+                chatButton.interactable = false;
                 return;
             }
             
             usernamePanel.gameObject.SetActive(false);
+            levelsButton.interactable = true;
+            chatButton.interactable = true;
+ 
             LoginWithPlayFabAccount();
         }
 
@@ -57,8 +67,7 @@ namespace ConnectedFoods.Network
             );
         }
 
-
-        public void RegisterWithPlayFabID(string username, Action<string> onLoginErrorAction, Action onLoginSuccess = null)
+        public void RegisterWithPlayFabID(string username, Action<string> onLoginErrorAction, Action<string> onLoginSuccess)
         {
             RegisterPlayFabUserRequest registerRequest = new RegisterPlayFabUserRequest()
             {
@@ -77,7 +86,7 @@ namespace ConnectedFoods.Network
                     LoginWithPlayFabAccount();
                     DataManager.Instance.EventData.OnSetUsername?.Invoke(UsernamePlayerPrefs);
                     Debug.Log("Success Register");
-                    onLoginSuccess?.Invoke();
+                    onLoginSuccess?.Invoke("Register Success !");
                 },
                 error => { onLoginErrorAction?.Invoke(error.ErrorMessage); }
             );

@@ -15,6 +15,8 @@ namespace ConnectedFoods.UserInterface
 
         [SerializeField] private Image connectionErrorImage;
         [SerializeField] private GameObject confettiPanel;
+
+        [SerializeField] private GameObject loginPanel;
         
         private void OnEnable()
         {
@@ -55,14 +57,15 @@ namespace ConnectedFoods.UserInterface
 
         private void OnLoginErrorHandler()
         {
-            chatButton.interactable = false;
             connectionErrorImage.gameObject.SetActive(true);
         }
 
         private void OnLoginSuccessHandler()
         {
-            chatButton.interactable = true;
             connectionErrorImage.gameObject.SetActive(false);
+            loginPanel.SetActive(false);
+            levelsButton.interactable = true;
+            chatButton.interactable = true;
         }
 
         private void ChatButtonOnClick()
@@ -73,7 +76,7 @@ namespace ConnectedFoods.UserInterface
 
         private void LevelsButtonOnClick()
         {
-            levelsPanel.SetActive(!levelsPanel.activeSelf);
+            levelsPanel.SetActive(true);
             levelsButton.gameObject.SetActive(false);
             chatButton.gameObject.SetActive(false);
         }

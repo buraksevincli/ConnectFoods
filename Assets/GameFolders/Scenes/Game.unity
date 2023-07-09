@@ -597,30 +597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_Parameters.textureMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 69149afbfbd17468389f2c52d456d37d, type: 2}
-    - target: {fileID: 2905475778548690475, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29077dfd6fe95eb469785cf4e3019c9f, type: 3}
 --- !u!1001 &3970039372095092335

@@ -15,7 +15,7 @@ MonoBehaviour:
   levelInfos:
   - level: 1
     size: 6
-    remainingMove: 5
+    remainingMove: 10
     requiredFoods:
     - foodType: 1
       amount: 5
