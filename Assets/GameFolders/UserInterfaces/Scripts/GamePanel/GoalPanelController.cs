@@ -10,40 +10,24 @@ namespace ConnectedFoods.UserInterface
         [SerializeField] private GoalPanelItem[] goalItems;
 
         private int _foodScore;
+        private int _remainingCount;
 
         private void Start()
         {
+            _remainingCount = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.SelectedLevel).RemainingMove;
             GoalSetter();
         }
 
         private void OnEnable()
         {
             DataManager.Instance.EventData.OnMatch += GoalUpdateHandler;
-            DataManager.Instance.EventData.OnCheckRemainingMove += OnCheckRemainingMoveHandler;
         }
 
         private void OnDisable()
         {
             DataManager.Instance.EventData.OnMatch -= GoalUpdateHandler;
-            DataManager.Instance.EventData.OnCheckRemainingMove -= OnCheckRemainingMoveHandler;
         }
         
-        private void OnCheckRemainingMoveHandler(int remainingMove)
-        {
-            int totalFoodCount = goalItems.Sum(goalItem => goalItem.RemainingAmount);
-
-            switch (totalFoodCount)
-            {
-                case 0 when remainingMove >= 0:
-                    int totalScore = _foodScore + remainingMove;
-                    DataManager.Instance.EventData.OnWinCondition?.Invoke(totalScore);
-                    break;
-                case > 0 when remainingMove == 0:
-                    DataManager.Instance.EventData.OnLoseCondition?.Invoke(_foodScore);
-                    break;
-            }
-        }
-
         private void GoalSetter()
         {
             RequiredFood[] requiredFoods = DataManager.Instance.LevelData.GetLevelInfo(GameManager.Instance.SelectedLevel).RequiredFoods;
@@ -61,12 +45,30 @@ namespace ConnectedFoods.UserInterface
             }
         }
 
+
         private void GoalUpdateHandler(FoodType foodType, int amount)
         {
             _foodScore += amount;
 
             GoalPanelItem goalPanelItem = goalItems.FirstOrDefault(goalItem => goalItem.FoodType == foodType);
             goalPanelItem.RemainingAmount -= amount;
+            
+            if (_remainingCount < 0) return;
+            
+            _remainingCount--;
+            
+            int totalFoodCount = goalItems.Sum(goalItem => goalItem.RemainingAmount);
+
+            switch (totalFoodCount)
+            {
+                case 0 when _remainingCount >= 0:
+                    int totalScore = _foodScore + _remainingCount;
+                    DataManager.Instance.EventData.OnWinCondition?.Invoke(totalScore);
+                    break;
+                case > 0 when _remainingCount == 0:
+                    DataManager.Instance.EventData.OnLoseCondition?.Invoke(_foodScore);
+                    break;
+            }
         }
     }
 }

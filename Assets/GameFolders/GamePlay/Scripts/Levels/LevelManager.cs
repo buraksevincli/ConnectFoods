@@ -161,6 +161,8 @@ namespace ConnectedFoods.Level
 
             if (_isLevelFinish) yield break;
 
+            MatchController.Instance.CanSelect = true;
+
             bool haveMatch = false;
             
             for (int i = 0; i < _levelInfo.Size; i++)
@@ -181,7 +183,6 @@ namespace ConnectedFoods.Level
                                         if (neighbor.FoodItem.FoodType == nodeNeighbor.FoodItem.FoodType) // 3 Match
                                         {
                                             haveMatch = true;
-                                            MatchController.Instance.CanSelect = true;
                                             yield return null;
                                         }
                                     }
