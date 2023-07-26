@@ -1,13 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using ConnectedFoods.Core;
 using ConnectedFoods.Level;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 namespace ConnectedFoods.UserInterface
 {
@@ -15,7 +11,6 @@ namespace ConnectedFoods.UserInterface
     {
         [SerializeField] private LevelButtonItem levelButtonItemPrefab;
         [SerializeField] private RectTransform contentRectTransform;
-        [SerializeField] private ScrollRect scrollRect;
 
         private Action _newLevelAction;
         private Action _openButtonAction;
@@ -68,7 +63,6 @@ namespace ConnectedFoods.UserInterface
         {
             yield return new WaitForEndOfFrame();
 
-            float offset = (GameManager.Instance.Level -1) * 50;
             float itemOffset = (GameManager.Instance.Level -1) * 250;
             float posY = (50 + itemOffset);
             if (posY + 1000 > contentRectTransform.rect.height)

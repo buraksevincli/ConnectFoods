@@ -15,10 +15,6 @@ namespace ConnectedFoods.Level
         [SerializeField] private Color activeLevelColor;
         [SerializeField] private Color deActiveColor;
 
-        public Button Button => button;
-        public TextMeshProUGUI LevelText => levelText;
-        public TextMeshProUGUI ScoreText => scoreText;
-
         public void Initiate(int level, LevelStatus status, Action<int> onClick, ref Action newLevelAction, ref Action openButtonAction)
         {
             transform.localScale = Vector3.zero;

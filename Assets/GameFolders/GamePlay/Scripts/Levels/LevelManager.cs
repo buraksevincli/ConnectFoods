@@ -5,13 +5,14 @@ using System.Linq;
 using ConnectedFoods.Core;
 using ConnectedFoods.Game;
 using UnityEngine;
-using Random = Unity.Mathematics.Random;
 
 namespace ConnectedFoods.Level
 {
     public class LevelManager : MonoSingleton<LevelManager>
     {
         [SerializeField] private FoodItem foodItemPrefab;
+
+        private bool _haveMatch;
         
         private bool _isLevelFinish = false;
 
@@ -160,10 +161,8 @@ namespace ConnectedFoods.Level
             yield return new WaitForSeconds(0.1f);
 
             if (_isLevelFinish) yield break;
-
-            MatchController.Instance.CanSelect = true;
-
-            bool haveMatch = false;
+            
+            _haveMatch = false;
             
             for (int i = 0; i < _levelInfo.Size; i++)
             {
@@ -182,8 +181,9 @@ namespace ConnectedFoods.Level
                                     {
                                         if (neighbor.FoodItem.FoodType == nodeNeighbor.FoodItem.FoodType) // 3 Match
                                         {
-                                            haveMatch = true;
-                                            yield return null;
+                                            _haveMatch = true;
+                                            MatchController.Instance.CanSelect = true;
+                                            yield break;
                                         }
                                     }
                                     yield return null;
@@ -197,7 +197,7 @@ namespace ConnectedFoods.Level
                 yield return null;
             }
 
-            if (!haveMatch)
+            if (!_haveMatch)
             {
                 StartCoroutine(ReOrderFoods());
             }

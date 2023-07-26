@@ -30,7 +30,7 @@ namespace ConnectedFoods.Game
                     float scale = foodItem.transform.localScale.x;
                     float x = j - size / 2f + scale / 2f;
                     float y = i - size / 2f + scale / 2f;
-
+                    
                     foodItem.transform.localPosition = new Vector3(x, y, 0);
                     foodItem.FoodType = (FoodType)Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
                 }

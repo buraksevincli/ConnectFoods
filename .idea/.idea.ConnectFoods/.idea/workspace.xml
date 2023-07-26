@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9b89ae-2989-4f32-bd3d-a29a4f47231f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFoods/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3rdParts/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/PlayFab/PlayFabLoginManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[PlayFabLoginManager].prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Prefabs/Managers/[PlayFabLoginManager].prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/Chat/PhotonChatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Backends/Scripts/Chat/PhotonChatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Scriptables/EventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/Cores/Scripts/Scriptables/EventData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/FoodItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/SampleLevelCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Foods/SampleLevelCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/GamePlay/Scripts/Levels/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/Structs/LevelButtonItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/Structs/LevelButtonItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58a4dd82307e4998a93e7f385e72c68b26c00/03/e1e459b2/TweenExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../BallGuys/Assets/GameFolders/Backend/PlayFab/PlayFabLogin.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../BallGuys/Assets/GameFolders/Backend/PlayFab/PlayFabLoginUIController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../BallGuys/Assets/GameFolders/UserInterface/Lobby/LobbyUIManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -32,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/LevelsPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/MenuPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameFolders/UserInterfaces/Scripts/MenuPanel/Structs/LevelButtonItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutRebuilder.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,7 +52,6 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -121,6 +122,9 @@
       <workItem from="1688810994364" duration="10211000" />
       <workItem from="1688896115232" duration="6153000" />
       <workItem from="1688903404362" duration="15657000" />
+      <workItem from="1690320522587" duration="722000" />
+      <workItem from="1690327726095" duration="649000" />
+      <workItem from="1690363404567" duration="10257000" />
     </task>
     <servers />
   </component>

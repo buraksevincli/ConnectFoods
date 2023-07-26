@@ -1,11 +1,9 @@
-using System;
 using ConnectedFoods.Core;
 using ExitGames.Client.Photon;
 using Photon.Chat;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ConnectedFoods.Network
